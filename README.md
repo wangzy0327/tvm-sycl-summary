@@ -16,7 +16,9 @@ TVM中添加SYCL设备代码支持，相关tvm-sycl代码详见https://github.co
 
 cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
 
-cuda Tesla V100 测试日志文件 [详见](tvm-cuda-V100-sycl-test-result/cuda-V100-networksummary.xlsx)
+Nvidia Tesla V100 测试统计结果 [详见](tvm-cuda-V100-sycl-test-result/cuda-V100-network-summary.xlsx)
+
+AMD Radeon 测试统计结果 [详见](tvm-amd-MI50-sycl-test-result/rocm-MI50-network-summary.xlsx)
 
 | network      | cuda | SYCL-Nvidia   | rocm-AMD | SYCL-AMD | rocm-Hygon | SYCL-Hygon         |
 | ------------ | ---- | ------------- | -------- | -------- | ---------- | ------------------ |
@@ -57,7 +59,7 @@ cuda平台下测试设备为Tesla V100-32GB
 
 | network | platform  | bug                                                          | progress              |
 | ------- | --------- | ------------------------------------------------------------ | --------------------- |
-| mnist-1 | sycl/cuda | [compute number accuracy]()                                  | undo(2022-12-release) |
+| mnist-1 | sycl/cuda | compute number accuracy                                  | undo(2022-12-release) |
 | any     | sycl/cuda | PI CUDA ERROR 700 an illegal memory access was encountered(sycl/plugins/cuda/pi_cuda.cpp) | undo                  |
 |         |           |                                                              |                       |
 
