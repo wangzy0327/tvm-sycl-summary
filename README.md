@@ -18,22 +18,22 @@ cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Rad
 
 cuda Tesla V100 测试日志文件 [详见](tvm-cuda-V100-sycl-test-result/cuda-V100-networksummary.xlsx)
 
-| network      | cuda | SYCL/cuda     | hip  | SYCL/hip | hygon | SYCL/hygon         |
-| ------------ | ---- | ------------- | ---- | -------- | ----- | ------------------ |
-| mnist        | √    | √（mnist-1×） | ×    | √        | ×     | √（Log_Error?）    |
-| alexnet      | √    | √             | ×    | √        | ×     | √（same as above） |
-| caffenet     | √    | √             | ×    | √        | ×     | √（same as above） |
-| densenet     | √    | √             | ×    | √        | ×     | √（same as above） |
-| efficientnet | √    | √             | ×    | √        | ×     | √（same as above） |
-| inception    | √    | √             | ×    | √        | ×     | ×                  |
-| googlenet    | √    | √             | ×    | √        | ×     | ×                  |
-| mobilenet    | √    | √             | ×    | √        | ×     | √（same as above） |
-| rcnn         | √    | √             | ×    | √        | ×     | √（same as above） |
-| resnet       | √    | √             | ×    | √        | ×     | √（same as above） |
-| shufflenet   | √    | √             | ×    | √        | ×     | √（same as above） |
-| squeezenet   | √    | √             | ×    | √        | ×     | √（same as above） |
-| vgg          | √    | √             | ×    | √        | ×     | √（same as above） |
-| zfnet        | √    | √             | ×    | √        | ×     | √（same as above） |
+| network      | cuda | SYCL-Nvidia   | rocm-AMD | SYCL-AMD | rocm-Hygon | SYCL-Hygon         |
+| ------------ | ---- | ------------- | -------- | -------- | ---------- | ------------------ |
+| mnist        | √    | √（mnist-1×） | ×        | √        | ×          | √（Log_Error?）    |
+| alexnet      | √    | √             | ×        | √        | ×          | √（same as above） |
+| caffenet     | √    | √             | ×        | √        | ×          | √（same as above） |
+| densenet     | √    | √             | ×        | √        | ×          | √（same as above） |
+| efficientnet | √    | √             | ×        | √        | ×          | √（same as above） |
+| inception    | √    | √             | ×        | √        | ×          | ×                  |
+| googlenet    | √    | √             | ×        | √        | ×          | ×                  |
+| mobilenet    | √    | √             | ×        | √        | ×          | √（same as above） |
+| rcnn         | √    | √             | ×        | √        | ×          | √（same as above） |
+| resnet       | √    | √             | ×        | √        | ×          | √（same as above） |
+| shufflenet   | √    | √             | ×        | √        | ×          | √（same as above） |
+| squeezenet   | √    | √             | ×        | √        | ×          | √（same as above） |
+| vgg          | √    | √             | ×        | √        | ×          | √（same as above） |
+| zfnet        | √    | √             | ×        | √        | ×          | √（same as above） |
 
 tvm-sycl开发测试过程中遇到的bug
 
@@ -69,7 +69,7 @@ correct result(sycl-2022-09)
 
 wrong result(sycl-2022-12)
 
-![wrong-result.png](imgs/auto-tune-mnist-1-wrong.png)
+<img src="imgs/auto-tune-mnist-1-wrong.png" alt="wrong-result.png" style="zoom: 70%;" />
 
 ##### bug-2
 
