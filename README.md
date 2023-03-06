@@ -18,6 +18,8 @@ cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Rad
 
 Nvidia Tesla V100 测试统计结果 [详见](tvm-cuda-V100-sycl-test-result/cuda-V100-network-summary.xlsx)
 
+Nvidia Tesla V100 测试日志 [详见](tvm-cuda-V100-sycl-test-result/error_tvm_V100_cuda_sycl.log)
+
 AMD Radeon 测试统计结果 [详见](tvm-amd-MI50-sycl-test-result/rocm-MI50-network-summary.xlsx)
 
 | network      | cuda-Nvidia | SYCL-Nvidia                                      | OpenCL-Nvidia | rocm-AMD | SYCL-AMD                                          | OpenCL-AMD | rocm-Hygon | SYCL-Hygon         | OpenCL-Hygon | SYCL-Intel         | OpenCL-Intel |
@@ -42,6 +44,7 @@ tvm-sycl开发测试过程中遇到的bug
 | network                                                      | platform       | bug                                                          | progress                                          |
 | ------------------------------------------------------------ | -------------- | ------------------------------------------------------------ | ------------------------------------------------- |
 | bvlcalexnet-7(alexnet)                                       | cuda           | cuda_piextUSMFree(pi_context, void*): Assertion `type == CU_MEMORYTYPE_DEVICE | fix（fix SYCL plugin USMFree interface）          |
+| vgg16-7(vgg)（some time）                                    | cuda           | CUDA_ERROR_ILLEGAL_ADDRESS：an illegal memory access was encountered | undo                                              |
 | resnet50-caffe2-v1-6（resnet-caffe）&& mnist-1(mnist) && ... | cuda/hip/hygon | Assertion `KSIdMap[EntriesIt->name] == KSIdIt->second && "Kernel sets are not disjoint"' failed | fix（fix SYCL program manager kernel sets check） |
 | any                                                          | cuda/hip/hygon | warning: linking module ''[-Wlinker-warnings]                | fix（fix in 2022-12-release）                     |
 | any                                                          | cuda/hip/hygon | warning: linked binaries do not contain expected [-Wsycl-target] | fix（fix in 2022-12-release）                     |
