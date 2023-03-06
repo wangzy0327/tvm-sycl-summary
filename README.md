@@ -83,4 +83,10 @@ PI CUDA ERROR
 
 PI HIP ERROR
 
-<img src="imgs/PI_HIP_ERROR.png" alt="PI_HIP_ERROR.png" style="zoom: 50%;" />
+<img src="imgs/PI_HIP_ERROR.png" alt="PI_HIP_ERROR.png" style="zoom: 45%;" />
+
+**bug_4**
+
+/tmp/libsycl-fallback-xxx.cubin : Permission denied.
+
+<img src="imgs/permission_error.png" alt="permission-error.png" style="zoom:55%;" />
