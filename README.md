@@ -14,28 +14,28 @@ TVM中添加SYCL设备代码支持，相关tvm-sycl代码详见https://github.co
 
 以下的测试的tvm版本为v.0.10 Release，cuda版本为11.2，hip版本为5.2，hygon版本为5.2，SYCL版本为2022-09-release
 
-cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
+cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，oneapi-LevelZero平台下测试设备为Intel DKMS i915，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
 
 Nvidia Tesla V100 测试统计结果 [详见](tvm-cuda-V100-sycl-test-result/cuda-V100-network-summary.xlsx)
 
 AMD Radeon 测试统计结果 [详见](tvm-amd-MI50-sycl-test-result/rocm-MI50-network-summary.xlsx)
 
-| network      | cuda | SYCL-Nvidia   | rocm-AMD | SYCL-AMD | rocm-Hygon | SYCL-Hygon         |
-| ------------ | ---- | ------------- | -------- | -------- | ---------- | ------------------ |
-| mnist        | √    | √（mnist-1×） | ×        | √        | ×          | √（Log_Error?）    |
-| alexnet      | √    | √             | ×        | √        | ×          | √（same as above） |
-| caffenet     | √    | √             | ×        | √        | ×          | √（same as above） |
-| densenet     | √    | √             | ×        | √        | ×          | √（same as above） |
-| efficientnet | √    | √             | ×        | √        | ×          | √（same as above） |
-| inception    | √    | √             | ×        | √        | ×          | ×                  |
-| googlenet    | √    | √             | ×        | √        | ×          | ×                  |
-| mobilenet    | √    | √             | ×        | √        | ×          | √（same as above） |
-| rcnn         | √    | √             | ×        | √        | ×          | √（same as above） |
-| resnet       | √    | √             | ×        | √        | ×          | √（same as above） |
-| shufflenet   | √    | √             | ×        | √        | ×          | √（same as above） |
-| squeezenet   | √    | √             | ×        | √        | ×          | √（same as above） |
-| vgg          | √    | √             | ×        | √        | ×          | √（same as above） |
-| zfnet        | √    | √             | ×        | √        | ×          | √（same as above） |
+| network      | cuda-Nvidia | SYCL-Nvidia                                      | OpenCL-Nvidia | rocm-AMD | SYCL-AMD                                          | OpenCL-AMD | rocm-Hygon | SYCL-Hygon         | OpenCL-Hygon | SYCL-Intel         | OpenCL-Intel |
+| ------------ | ----------- | ------------------------------------------------ | ------------- | -------- | ------------------------------------------------- | ---------- | ---------- | ------------------ | ------------ | ------------------ | ------------ |
+| mnist        | √           | √（mnist-1×）                                    | √             | ×        | √ (mnist-1 ×)                                     | √          | ×          | √（Log_Error?）    | √            | √                  | √            |
+| alexnet      | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| caffenet     | √           | √(caffenet-3 ×)<br />(caffenet-9 ×)              | √             | ×        | √ (caffenet-3 ×)<br />(caffenet-9 ×)              | √          | ×          | √（same as above） | √            | √                  | √            |
+| densenet     | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| efficientnet | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| inception    | √           | √                                                | √             | ×        | √                                                 | √          | ×          | ×                  | √            | √                  | √            |
+| googlenet    | √           | √                                                | √             | ×        | √                                                 | √          | ×          | ×                  | √            | √                  | √            |
+| mobilenet    | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| rcnn         | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| resnet       | √           | √(resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √             | ×        | √ (resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √          | ×          | √（same as above） | √            | √(resnet50-v1-7 ×) | √            |
+| shufflenet   | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| squeezenet   | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| vgg          | √           | √(vgg19-caffe2-6 ×)                              | √             | ×        | √(vgg19-caffe2-6 ×)                               | √          | ×          | √（same as above） | √            | √                  | √            |
+| zfnet        | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 
 tvm-sycl开发测试过程中遇到的bug
 
@@ -78,3 +78,9 @@ wrong result(sycl-2022-12)
 PI CUDA ERROR
 
 ![PI_CUDA_ERROR.png](imgs/PI_CUDA_ERROR.png)
+
+**bug-3**
+
+PI HIP ERROR
+
+<img src="imgs/PI_HIP_ERROR.png" alt="PI_HIP_ERROR.png" style="zoom: 50%;" />
