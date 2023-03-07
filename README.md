@@ -30,13 +30,13 @@ AMD Radeon 测试统计结果 [详见](tvm-amd-MI50-sycl-test-result/rocm-MI50-n
 | densenet     | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 | efficientnet | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 | inception    | √           | √                                                | √             | ×        | √                                                 | √          | ×          | ×                  | √            | √                  | √            |
-| googlenet    | √           | √                                                | √             | ×        | √                                                 | √          | ×          | ×                  | √            | √                  | √            |
+| googlenet    | √           | √                                                | √             | ×        | √（googlenet-3 ×）                                | √          | ×          | ×                  | √            | √                  | √            |
 | mobilenet    | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 | rcnn         | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 | resnet       | √           | √(resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √             | ×        | √ (resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √          | ×          | √（same as above） | √            | √(resnet50-v1-7 ×) | √            |
 | shufflenet   | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 | squeezenet   | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| vgg          | √           | √(vgg19-caffe2-6 ×)                              | √             | ×        | √(vgg19-caffe2-6 ×)                               | √          | ×          | √（same as above） | √            | √                  | √            |
+| vgg          | √           | √(vgg19-caffe2-6 ×)                              | √             | ×        | √（vgg16-bn-7 ×）(vgg19-caffe2-6 ×)               | √          | ×          | √（same as above） | √            | √                  | √            |
 | zfnet        | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 
 tvm-sycl开发测试过程中遇到的bug
@@ -45,6 +45,7 @@ tvm-sycl开发测试过程中遇到的bug
 | ------------------------------------------------------------ | -------------- | ------------------------------------------------------------ | ------------------------------------------------- |
 | bvlcalexnet-7(alexnet)                                       | cuda           | cuda_piextUSMFree(pi_context, void*): Assertion `type == CU_MEMORYTYPE_DEVICE | fix（fix SYCL plugin USMFree interface）          |
 | vgg16-7(vgg)（some time）                                    | cuda           | CUDA_ERROR_ILLEGAL_ADDRESS：an illegal memory access was encountered | undo                                              |
+| googlenet-3                                                  | hip            | Segmentation fault (core dumped)                             | undo                                              |
 | resnet50-caffe2-v1-6（resnet-caffe）&& mnist-1(mnist) && ... | cuda/hip/hygon | Assertion `KSIdMap[EntriesIt->name] == KSIdIt->second && "Kernel sets are not disjoint"' failed | fix（fix SYCL program manager kernel sets check） |
 | any                                                          | cuda/hip/hygon | warning: linking module ''[-Wlinker-warnings]                | fix（fix in 2022-12-release）                     |
 | any                                                          | cuda/hip/hygon | warning: linked binaries do not contain expected [-Wsycl-target] | fix（fix in 2022-12-release）                     |
@@ -60,11 +61,11 @@ cuda平台下测试设备为Tesla V100-32GB
 
 目前测试遇到的问题
 
-| network | platform  | bug                                                          | progress              |
-| ------- | --------- | ------------------------------------------------------------ | --------------------- |
-| mnist-1 | sycl/cuda | compute number accuracy                                  | undo(2022-12-release) |
-| any     | sycl/cuda | PI CUDA ERROR 700 an illegal memory access was encountered(sycl/plugins/cuda/pi_cuda.cpp) | undo                  |
-|         |           |                                                              |                       |
+| network  | platform  | bug                                                          | progress              |
+| -------- | --------- | ------------------------------------------------------------ | --------------------- |
+| mnist-1  | sycl/cuda | compute number accuracy                                      | undo(2022-12-release) |
+| any      | sycl/cuda | PI CUDA ERROR 700 an illegal memory access was encountered(sycl/plugins/cuda/pi_cuda.cpp) | undo                  |
+| google-3 | sycl/hip  | Memory access fault by GPU node-2 (Agent handle: 0x56534ffb3250) on address 0x7facb0600000. Reason: Page not present or supervisor privilege. | undo                  |
 
 ##### bug-1
 
@@ -93,3 +94,11 @@ PI HIP ERROR
 /tmp/libsycl-fallback-xxx.cubin : Permission denied.
 
 <img src="imgs/permission_error.png" alt="permission-error.png" style="zoom:55%;" />
+
+**bug-5**
+
+Memory access fault by GPU node-2 (Agent handle: 0x56534ffb3250) on address 0x7facb0600000. Reason: Page not present or supervisor privilege.
+
+<img src="imgs/AMD-googlenet-3-error.png" alt="AMD-googlenet-3-error.png" style="zoom:67%;" />
+
+<img src="imgs/AMD-memory-access-fault.png" alt="AMD-memory-access-fault.png" style="zoom:67%;" />
