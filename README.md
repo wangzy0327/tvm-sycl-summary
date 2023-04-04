@@ -103,3 +103,15 @@ Memory access fault by GPU node-2 (Agent handle: 0x56534ffb3250) on address 0x7f
 <img src="imgs/AMD-googlenet-3-error.png" alt="AMD-googlenet-3-error.png" style="zoom:67%;" />
 
 <img src="imgs/AMD-memory-access-fault.png" alt="AMD-memory-access-fault.png" style="zoom:67%;" />
+
+tvm的rocm容器执行网络模型
+
+```shell
+docker run -it --device=/dev/dri --device=/dev/kfd --network=host --group-add=render \
+-v /home/wzy:/home/wzy rocm-tvm-0.7:5.4.2 /bin/bash
+
+
+docker run -it --device=/dev/dri --device=/dev/kfd --network=host --group-add=render \
+-v /home/wzy:/home/wzy mevermeulen/rocm-tvm:5.4.2 /bin/bash
+```
+
