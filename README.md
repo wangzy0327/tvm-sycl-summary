@@ -22,22 +22,22 @@ Nvidia Tesla V100 测试日志 [详见](tvm-cuda-V100-sycl-test-result/error_tvm
 
 AMD Radeon 测试统计结果 [详见](tvm-amd-MI50-sycl-test-result/rocm-MI50-network-summary.xlsx)
 
-| network      | cuda-Nvidia | SYCL-Nvidia                                      | OpenCL-Nvidia | rocm-AMD | SYCL-AMD                                          | OpenCL-AMD | rocm-Hygon | SYCL-Hygon         | OpenCL-Hygon | SYCL-Intel         | OpenCL-Intel |
-| ------------ | ----------- | ------------------------------------------------ | ------------- | -------- | ------------------------------------------------- | ---------- | ---------- | ------------------ | ------------ | ------------------ | ------------ |
-| mnist        | √           | √（mnist-1×）                                    | √             | ×        | √ (mnist-1 ×)                                     | √          | ×          | √（Log_Error?）    | √            | √                  | √            |
-| alexnet      | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| caffenet     | √           | √(caffenet-3 ×)<br />(caffenet-9 ×)              | √             | ×        | √ (caffenet-3 ×)<br />(caffenet-9 ×)              | √          | ×          | √（same as above） | √            | √                  | √            |
-| densenet     | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| efficientnet | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| inception    | √           | √                                                | √             | ×        | √                                                 | √          | ×          | ×                  | √            | √                  | √            |
-| googlenet    | √           | √                                                | √             | ×        | √（googlenet-3 ×）                                | √          | ×          | ×                  | √            | √                  | √            |
-| mobilenet    | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| rcnn         | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| resnet       | √           | √(resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √             | ×        | √ (resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √          | ×          | √（same as above） | √            | √(resnet50-v1-7 ×) | √            |
-| shufflenet   | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| squeezenet   | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| vgg          | √           | √(vgg19-caffe2-6 ×)                              | √             | ×        | √（vgg16-bn-7 ×）(vgg19-caffe2-6 ×)               | √          | ×          | √（same as above） | √            | √                  | √            |
-| zfnet        | √           | √                                                | √             | ×        | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| network      | cuda-Nvidia | SYCL-Nvidia                                      | OpenCL-Nvidia | rocm-AMD           | SYCL-AMD                                          | OpenCL-AMD | rocm-Hygon | SYCL-Hygon         | OpenCL-Hygon | SYCL-Intel         | OpenCL-Intel |
+| ------------ | ----------- | ------------------------------------------------ | ------------- | ------------------ | ------------------------------------------------- | ---------- | ---------- | ------------------ | ------------ | ------------------ | ------------ |
+| mnist        | √           | √（mnist-1×）                                    | √             | √                  | √ (mnist-1 ×)                                     | √          | ×          | √（Log_Error?）    | √            | √                  | √            |
+| alexnet      | √           | √                                                | √             | √（vgg16-bn-7 × ） | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| caffenet     | √           | √(caffenet-3 ×)<br />(caffenet-9 ×)              | √             | √                  | √√ (caffenet-3 ×)<br />(caffenet-9 ×)             | √          | ×          | √（same as above） | √            | √                  | √            |
+| densenet     | √           | √                                                | √             | √                  | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| efficientnet | √           | √                                                | √             | √                  | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| inception    | √           | √                                                | √             | √                  | √                                                 | √          | ×          | ×                  | √            | √                  | √            |
+| googlenet    | √           | √                                                | √             | √                  | √（googlenet-3 ×）                                | √          | ×          | ×                  | √            | √                  | √            |
+| mobilenet    | √           | √                                                | √             | √                  | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| rcnn         | √           | √                                                | √             | √                  | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| resnet       | √           | √(resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √             | √                  | √ (resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √          | ×          | √（same as above） | √            | √(resnet50-v1-7 ×) | √            |
+| shufflenet   | √           | √                                                | √             | √                  | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| squeezenet   | √           | √                                                | √             | √                  | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| vgg          | √           | √(vgg19-caffe2-6 ×)                              | √             | √                  | √（vgg16-bn-7 ×）(vgg19-caffe2-6 ×)               | √          | ×          | √（same as above） | √            | √                  | √            |
+| zfnet        | √           | √                                                | √             | √                  | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 
 tvm-sycl开发测试过程中遇到的bug
 
@@ -49,6 +49,7 @@ tvm-sycl开发测试过程中遇到的bug
 | any                                                          | cuda/hip/hygon | warning: linking module ''[-Wlinker-warnings]                | fix（fix in 2022-12-release）                                |
 | any                                                          | cuda/hip/hygon | warning: linked binaries do not contain expected [-Wsycl-target] | fix（fix in 2022-12-release）                                |
 | vgg16-7(vgg)（some time）                                    | cuda           | CUDA_ERROR_ILLEGAL_ADDRESS：an illegal memory access was encountered | unfix                                                        |
+| vgg16-7                                                      | hip            | PI HIP ERROR： hipErrorNotFound<br />Function:        hip_piKernelCreate<br />/home/wzy/sycl_workspace/llvm/sycl/plugins/hip/pi_hip.cpp:2717 | unfix                                                        |
 | googlenet-3                                                  | hip            | Segmentation fault (core dumped)                             | unfix                                                        |
 | **any**(some time)                                           | cuda/hip/hygon | Check failed: (e.code() == sycl::errc::success) is false: SYCL Error, code=sycl:13: kERNEL NOT SUPPORTED | unfix                                                        |
 | **any**(all time)                                            | hygon          | [LOG_ERROR]: cannot find the function _ZTSZZ39tvmgen_default_ | unfix                                                        |
@@ -103,6 +104,52 @@ Memory access fault by GPU node-2 (Agent handle: 0x56534ffb3250) on address 0x7f
 <img src="imgs/AMD-googlenet-3-error.png" alt="AMD-googlenet-3-error.png" style="zoom:67%;" />
 
 <img src="imgs/AMD-memory-access-fault.png" alt="AMD-memory-access-fault.png" style="zoom:67%;" />
+
+**bug-6**
+
+```cpp
+pi_result cuda_piKernelCreate(pi_program program, const char *kernel_name,
+                              pi_kernel *kernel) {
+  assert(kernel != nullptr);
+  assert(program != nullptr);
+
+  pi_result retErr = PI_SUCCESS;
+  std::unique_ptr<_pi_kernel> retKernel{nullptr};
+
+  try {
+    ScopedContext active(program->get_context());
+
+    CUfunction cuFunc;
+    retErr = PI_CHECK_ERROR(
+        cuModuleGetFunction(&cuFunc, program->get(), kernel_name));
+
+    std::string kernel_name_woffset = std::string(kernel_name) + "_with_offset";
+    CUfunction cuFuncWithOffsetParam;
+    CUresult offsetRes = cuModuleGetFunction(
+        &cuFuncWithOffsetParam, program->get(), kernel_name_woffset.c_str());
+
+    // If there is no kernel with global offset parameter we mark it as missing
+    if (offsetRes == CUDA_ERROR_NOT_FOUND) {
+      cuFuncWithOffsetParam = nullptr;
+    } else {
+      retErr = PI_CHECK_ERROR(offsetRes);
+    }
+
+    retKernel = std::unique_ptr<_pi_kernel>(
+        new _pi_kernel{cuFunc, cuFuncWithOffsetParam, kernel_name, program,
+                       program->get_context()});
+  } catch (pi_result err) {
+    retErr = err;
+  } catch (...) {
+    retErr = PI_ERROR_OUT_OF_HOST_MEMORY;
+  }
+
+  *kernel = retKernel.release();
+  return retErr;
+}
+```
+
+<img src="imgs/hipErrorNotFound.png" alt="hipErrorNotFound" style="zoom: 80%;" />
 
 tvm的rocm容器执行网络模型
 
