@@ -22,22 +22,22 @@ Nvidia Tesla V100 测试日志 [详见](tvm-cuda-V100-sycl-test-result/error_tvm
 
 AMD Radeon 测试统计结果 [详见](tvm-amd-MI50-sycl-test-result/rocm-MI50-network-summary.xlsx)
 
-| network      | cuda-Nvidia | SYCL-Nvidia                                      | OpenCL-Nvidia | rocm-AMD                                        | SYCL-AMD                                          | OpenCL-AMD | rocm-Hygon | SYCL-Hygon         | OpenCL-Hygon | SYCL-Intel         | OpenCL-Intel |
-| ------------ | ----------- | ------------------------------------------------ | ------------- | ----------------------------------------------- | ------------------------------------------------- | ---------- | ---------- | ------------------ | ------------ | ------------------ | ------------ |
-| mnist        | √           | √（mnist-1×）                                    | √             | <font color=green>**√** </font>                 | √ (mnist-1 ×)                                     | √          | ×          | √（Log_Error?）    | √            | √                  | √            |
-| alexnet      | √           | √                                                | √             | <font color=green>**√**（vgg16-bn-7 × ）</font> | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| caffenet     | √           | √(caffenet-3 ×)<br />(caffenet-9 ×)              | √             | <font color=green>**√**  </font>                | √√ (caffenet-3 ×)<br />(caffenet-9 ×)             | √          | ×          | √（same as above） | √            | √                  | √            |
-| densenet     | √           | √                                                | √             | <font color=green>**√**  </font>                | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| efficientnet | √           | √                                                | √             | <font color=green>**√** </font>                                              | √                        | √          | ×          | √（same as above） | √            | √                  | √            |
-| inception    | √           | √                                                | √             | <font color=green>**√** </font>                    | √                                                 | √          | ×          | ×                  | √            | √                  | √            |
-| googlenet    | √           | √                                                | √             | <font color=green>**√** </font>                    | √（googlenet-3 ×）                                | √          | ×          | ×                  | √            | √                  | √            |
-| mobilenet    | √           | √                                                | √             | <font color=green>**√** </font>                    | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| rcnn         | √           | √                                                | √             |<font color=green>**√** </font>                   | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| resnet       | √           | √(resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √             | <font color=green>**√** </font>                    | √ (resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √          | ×          | √（same as above） | √            | √(resnet50-v1-7 ×) | √            |
-| shufflenet   | √           | √                                                | √             | <font color=green>**√** </font>                    | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| squeezenet   | √           | √                                                | √             | <font color=green>**√** </font>                    | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
-| vgg          | √           | √(vgg19-caffe2-6 ×)                              | √             | <font color=green>**√** </font>                    | √（vgg16-bn-7 ×）(vgg19-caffe2-6 ×)               | √          | ×          | √（same as above） | √            | √                  | √            |
-| zfnet        | √           | √                                                | √             | <font color=green>**√** </font>                    | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| network      | cuda-Nvidia | SYCL-Nvidia                                      | OpenCL-Nvidia | rocm-AMD                                                     | SYCL-AMD                                          | OpenCL-AMD | rocm-Hygon | SYCL-Hygon         | OpenCL-Hygon | SYCL-Intel         | OpenCL-Intel |
+| ------------ | ----------- | ------------------------------------------------ | ------------- | ------------------------------------------------------------ | ------------------------------------------------- | ---------- | ---------- | ------------------ | ------------ | ------------------ | ------------ |
+| mnist        | √           | √（mnist-1×）                                    | √             | <font color=green>**√** </font>                              | √ (mnist-1 ×)                                     | √          | ×          | √（Log_Error?）    | √            | √                  | √            |
+| alexnet      | √           | √                                                | √             | <font color=green>**√**</font>                               | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| caffenet     | √           | √(caffenet-3 ×)<br />(caffenet-9 ×)              | √             | <font color=green>**√**  </font>                             | √√ (caffenet-3 ×)<br />(caffenet-9 ×)             | √          | ×          | √（same as above） | √            | √                  | √            |
+| densenet     | √           | √                                                | √             | <font color=green>**√**  </font>                             | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| efficientnet | √           | √                                                | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| inception    | √           | √                                                | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | ×                  | √            | √                  | √            |
+| googlenet    | √           | √                                                | √             | <font color=green>**√** </font>                              | √（googlenet-3 ×）                                | √          | ×          | ×                  | √            | √                  | √            |
+| mobilenet    | √           | √                                                | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| rcnn         | √           | √                                                | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| resnet       | √           | √(resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √             | <font color=green>**√<br/>(resnet152-v1-7 ×)<br />(resnet50-caffe2-v1-3 ×)** </font> | √ (resnet50-v1-7 ×)<br />(resnet50-caffe2-v1-6 ×) | √          | ×          | √（same as above） | √            | √(resnet50-v1-7 ×) | √            |
+| shufflenet   | √           | √                                                | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| squeezenet   | √           | √                                                | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| vgg          | √           | √(vgg19-caffe2-6 ×)                              | √             | <font color=green>**√（vgg16-bn-7 ×）** </font>              | √（vgg16-bn-7 ×）(vgg19-caffe2-6 ×)               | √          | ×          | √（same as above） | √            | √                  | √            |
+| zfnet        | √           | √                                                | √             | <font color=green>**todo** </font>                           | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 
 tvm-sycl开发测试过程中遇到的bug
 
@@ -49,10 +49,11 @@ tvm-sycl开发测试过程中遇到的bug
 | resnet50-caffe2-v1-6（resnet-caffe）&& mnist-1(mnist) && ... | cuda/hip/hygon | Assertion `KSIdMap[EntriesIt->name] == KSIdIt->second && "Kernel sets are not disjoint"' failed | fix（fix SYCL program manager kernel sets check）            |
 | any                                                          | cuda/hip/hygon | warning: linking module ''[-Wlinker-warnings]                | fix（fix in 2022-12-release）                                |
 | any                                                          | cuda/hip/hygon | warning: linked binaries do not contain expected [-Wsycl-target] | fix（fix in 2022-12-release）                                |
+| shuffulenet/efficientnet                                     | hip            | warning:Warning: Unroll hint get ignore at CodeGenLLVM backend,  consider set unroll_explicit=True<br />tvm/tvm/src/target/llvm/codegen_llvm.cc:1503 | unfix                                                        |
 | vgg16-7(vgg)（some time）                                    | cuda           | CUDA_ERROR_ILLEGAL_ADDRESS：an illegal memory access was encountered | unfix                                                        |
 | vgg16-7                                                      | hip            | PI HIP ERROR： hipErrorNotFound<br />Function:        hip_piKernelCreate<br />/home/wzy/sycl_workspace/llvm/sycl/plugins/hip/pi_hip.cpp:2717 | unfix                                                        |
 | googlenet-3                                                  | hip            | Segmentation fault (core dumped)                             | unfix                                                        |
-| **any**(some time)                                           | cuda/hip/hygon | Check failed: (e.code() == sycl::errc::success) is false: SYCL Error, code=sycl:13: kERNEL NOT SUPPORTED | unfix                                                        |
+| **any**(some time)<br />resnet152-v1-7<br />resnet50-caffe2-v1-3 | cuda/hip/hygon | Check failed: (e.code() == sycl::errc::success) is false: SYCL Error, code=sycl:13: kERNEL NOT SUPPORTED | unfix                                                        |
 | **any**(all time)                                            | hygon          | [LOG_ERROR]: cannot find the function _ZTSZZ39tvmgen_default_ | unfix                                                        |
 | inception & googlenet                                        | hygon          | **nan**                                                      | unfix                                                        |
 
@@ -161,5 +162,35 @@ docker run -it --device=/dev/dri --device=/dev/kfd --network=host --group-add=re
 
 docker run -it --device=/dev/dri --device=/dev/kfd --network=host --group-add=render \
 -v /home/wzy:/home/wzy mevermeulen/rocm-tvm:5.4.2 /bin/bash
+```
+
+tvm的rocm容器Dockerfile
+
+```dockerfile
+FROM rocm/dev-ubuntu-20.04:5.2.3
+RUN sed -e 's/debian/5.2.3/g' /etc/apt/sources.list.d/rocm.list > /etc/apt/sources.list.d/rocm5.2.list
+RUN rm /etc/apt/sources.list.d/rocm.list
+ENV PATH=/opt/rocm/llvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update && apt install -y git wget libz3-dev libxml2-dev openssl libssl-dev libtinfo-dev libprotobuf-dev protobuf-compiler
+RUN mkdir /src && cd /src && wget https://github.com/Kitware/CMake/releases/download/v3.17.3/cmake-3.17.3.tar.gz && tar xf cmake-3.17.3.tar.gz && cd cmake-3.17.3 && ./configure && make && make install
+RUN apt update && apt install -y rocm-libs miopen-hip
+RUN apt update && apt install -y python python-dev python-setuptools gcc libtinfo-dev zlib1g-dev build-essential python3 python3-pip python3-setuptools python3-numpy
+# a34731 - ok
+# c2eb51 - not ok
+RUN cd /src && git clone --recursive https://github.com/mvermeulen/tvm && cd tvm && git checkout rocm-5.2-test
+RUN mkdir /src/tvm/build
+RUN cd /src/tvm/build && sed -e 's/USE_ROCM OFF/USE_ROCM ON/g' -e 's?USE_LLVM OFF?USE_LLVM /opt/rocm/llvm/bin/llvm-config?g' -e 's/USE_MIOPEN OFF/USE_MIOPEN ON/g' -e 's/USE_ROCBLAS OFF/USE_ROCBLAS ON/g' ../cmake/config.cmake > config.cmake
+RUN cd /src/tvm/build && cmake -DCMAKE_CXX_FLAGS="-Wno-deprecated-declarations" .. && make
+#RUN pip3 install os-sys
+RUN pip3 install -U numpy
+RUN cd /src/tvm/python && python3 setup.py install
+RUN cd /src && git clone https://github.com/mvermeulen/rocm-tvm
+RUN pip3 install scipy psutil xgboost tornado pytest
+RUN apt update && apt install -y libomp-dev graphviz rccl libopenblas-dev pciutils
+RUN export CMAKE_ARGS=-DONNX_USE_PROTOBUF_SHARED_LIBS=ON
+RUN pip3 install jupyter transformers antlr4-python3-runtime graphviz onnx pillow
+RUN pip3 install tensorflow
+WORKDIR /src/rocm-tvm
 ```
 
