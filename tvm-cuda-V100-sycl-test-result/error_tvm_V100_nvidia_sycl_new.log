@@ -1,0 +1,2989 @@
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_10875_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_10875_2.cc) to share library.
+-----------mnist----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------mnist-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0435       0.0436       0.0436       0.0434       0.0001   
+               
+        mnist-7 network opencl cost time is 0:00:13.704854 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.1251       0.1254       0.1260       0.1238       0.0009   
+               
+        mnist-7 network sycl cost time is 0:00:18.732958 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0315       0.0315       0.0315       0.0315       0.0000   
+               
+        mnist-7 network cuda cost time is 0:00:10.594924 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0759       0.0742       0.0800       0.0736       0.0029   
+               
+        mnist-7 network cuda -libs=cudnn cost time is 0:00:10.606141 s
+[-0.22859086 -0.25806987 -0.43340546  0.4846983  -0.6018106   0.22698797
+  0.85465795 -0.9607101   0.5279621  -1.1830723 ]
+[-0.22859004 -0.2580696  -0.43340582  0.48469713 -0.60181016  0.22698729
+  0.8546583  -0.96071035  0.52796185 -1.1830726 ]
+[-0.22859004 -0.2580696  -0.43340582  0.48469713 -0.60181016  0.22698729
+  0.8546583  -0.96071035  0.52796185 -1.1830726 ]
+[-0.22859004 -0.2580696  -0.43340582  0.48469713 -0.60181016  0.22698729
+  0.8546583  -0.96071035  0.52796185 -1.1830726 ]
+        mnist-7 sycl network tolerance is 1e-06
+--------mnist-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0439       0.0440       0.0440       0.0437       0.0001   
+               
+        mnist-8 network opencl cost time is 0:00:10.872463 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.1282       0.1299       0.1302       0.1244       0.0027   
+               
+        mnist-8 network sycl cost time is 0:00:17.984053 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0315       0.0315       0.0315       0.0315       0.0000   
+               
+        mnist-8 network cuda cost time is 0:00:10.132460 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0767       0.0768       0.0794       0.0740       0.0022   
+               
+        mnist-8 network cuda -libs=cudnn cost time is 0:00:10.027303 s
+[-0.22859086 -0.25806987 -0.43340546  0.4846983  -0.6018106   0.22698797
+  0.85465795 -0.9607101   0.5279621  -1.1830723 ]
+[-0.22859004 -0.2580696  -0.43340582  0.48469713 -0.60181016  0.22698729
+  0.8546583  -0.96071035  0.52796185 -1.1830726 ]
+[-0.22859004 -0.2580696  -0.43340582  0.48469713 -0.60181016  0.22698729
+  0.8546583  -0.96071035  0.52796185 -1.1830726 ]
+[-0.22859004 -0.2580696  -0.43340582  0.48469713 -0.60181016  0.22698729
+  0.8546583  -0.96071035  0.52796185 -1.1830726 ]
+        mnist-8 sycl network tolerance is 1e-06
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_11218_1.cc) to share library.
+-----------mnist-1----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------mnist-1----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0436       0.0436       0.0439       0.0432       0.0003   
+               
+        mnist-1 network opencl cost time is 0:00:13.683049 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.1260       0.1257       0.1292       0.1233       0.0024   
+               
+        mnist-1 network sycl cost time is 0:00:18.539953 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0321       0.0321       0.0321       0.0320       0.0000   
+               
+        mnist-1 network cuda cost time is 0:00:10.737113 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.0786       0.0769       0.0837       0.0750       0.0037   
+               
+        mnist-1 network cuda -libs=cudnn cost time is 0:00:11.016878 s
+[-0.04485603  0.00779166  0.06810082  0.02999374 -0.12640963  0.14021875
+ -0.0552849  -0.04938382  0.08432205 -0.05454041]
+[-0.04485603  0.00779166  0.06810082  0.02999374 -0.12640963  0.14021875
+ -0.0552849  -0.04938382  0.08432205 -0.05454041]
+[-0.04485603  0.00779166  0.06810082  0.02999374 -0.12640963  0.14021875
+ -0.0552849  -0.04938382  0.08432205 -0.05454041]
+[-0.04485603  0.00779166  0.06810082  0.02999374 -0.12640963  0.14021875
+ -0.0552849  -0.04938382  0.08432205 -0.05454041]
+        mnist-1 sycl network tolerance is 1e-07
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_11481_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_11481_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_11481_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_11481_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_11481_5.cc) to share library.
+-----------alexnet----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------bvlcalexnet-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.0467      13.0466      13.0474      13.0463       0.0005   
+               
+  bvlcalexnet-3 network opencl cost time is 0:00:24.782591 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  18.2607      18.2567      18.2987      18.2269       0.0294   
+               
+  bvlcalexnet-3 network sycl cost time is 0:00:31.951642 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  11.5846      11.5888      11.5912      11.5737       0.0078   
+               
+  bvlcalexnet-3 network cuda cost time is 0:00:21.888585 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7713       0.7714       0.7715       0.7711       0.0001   
+               
+  bvlcalexnet-3 network cuda -libs=cudnn cost time is 0:00:21.895009 s
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+  bvlcalexnet-3 sycl network tolerance is 1e-07
+--------bvlcalexnet-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.0445      13.0431      13.0490      13.0415       0.0032   
+               
+  bvlcalexnet-6 network opencl cost time is 0:00:21.418181 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  18.2030      18.2009      18.2075      18.2004       0.0032   
+               
+  bvlcalexnet-6 network sycl cost time is 0:00:31.097295 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  11.5862      11.5862      11.5881      11.5845       0.0015   
+               
+  bvlcalexnet-6 network cuda cost time is 0:00:21.761987 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7713       0.7713       0.7715       0.7712       0.0001   
+               
+  bvlcalexnet-6 network cuda -libs=cudnn cost time is 0:00:21.059327 s
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+  bvlcalexnet-6 sycl network tolerance is 1e-07
+--------bvlcalexnet-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.0687      13.0640      13.0919      13.0501       0.0174   
+               
+  bvlcalexnet-7 network opencl cost time is 0:00:21.793712 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  18.2372      18.2301      18.2654      18.2161       0.0208   
+               
+  bvlcalexnet-7 network sycl cost time is 0:00:31.218716 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  11.6236      11.6239      11.6247      11.6222       0.0011   
+               
+  bvlcalexnet-7 network cuda cost time is 0:00:21.496042 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7722       0.7721       0.7724       0.7720       0.0002   
+               
+  bvlcalexnet-7 network cuda -libs=cudnn cost time is 0:00:20.804068 s
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+  bvlcalexnet-7 sycl network tolerance is 1e-07
+--------bvlcalexnet-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.0911      13.0913      13.0914      13.0906       0.0004   
+               
+  bvlcalexnet-8 network opencl cost time is 0:00:21.563938 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  18.2912      18.2912      18.2928      18.2897       0.0012   
+               
+  bvlcalexnet-8 network sycl cost time is 0:00:31.283842 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  11.5725      11.5720      11.5736      11.5719       0.0008   
+               
+  bvlcalexnet-8 network cuda cost time is 0:00:20.340777 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7723       0.7724       0.7724       0.7720       0.0002   
+               
+  bvlcalexnet-8 network cuda -libs=cudnn cost time is 0:00:20.369713 s
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+  bvlcalexnet-8 sycl network tolerance is 1e-07
+--------bvlcalexnet-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.0890      13.0884      13.0910      13.0877       0.0014   
+               
+  bvlcalexnet-9 network opencl cost time is 0:00:21.491850 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  18.2897      18.2839      18.3018      18.2832       0.0086   
+               
+  bvlcalexnet-9 network sycl cost time is 0:00:31.375459 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  11.5730      11.5729      11.5738      11.5725       0.0005   
+               
+  bvlcalexnet-9 network cuda cost time is 0:00:19.849665 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7721       0.7722       0.7724       0.7717       0.0003   
+               
+  bvlcalexnet-9 network cuda -libs=cudnn cost time is 0:00:20.280280 s
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+[0.00127782 0.0007065  0.00154277 0.00182114 0.00282461 0.00179459
+ 0.00334065 0.00027405 0.0004684  0.00049641]
+  bvlcalexnet-9 sycl network tolerance is 1e-07
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_12055_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_12055_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_12055_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_12055_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_12055_5.cc) to share library.
+-----------caffenet----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------caffenet-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5291      14.5273      14.5350      14.5250       0.0043   
+               
+     caffenet-6 network opencl cost time is 0:00:26.504619 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.4024      20.3029      20.6269      20.2775       0.1591   
+               
+     caffenet-6 network sycl cost time is 0:00:33.053352 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8078      14.8066      14.8113      14.8054       0.0025   
+               
+     caffenet-6 network cuda cost time is 0:00:25.173402 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7736       0.7736       0.7739       0.7734       0.0002   
+               
+     caffenet-6 network cuda -libs=cudnn cost time is 0:00:23.242810 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-6 sycl network tolerance is 1e-07
+--------caffenet-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5141      14.5147      14.5168      14.5108       0.0025   
+               
+     caffenet-7 network opencl cost time is 0:00:24.344417 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.2548      20.2549      20.2567      20.2527       0.0017   
+               
+     caffenet-7 network sycl cost time is 0:00:34.065771 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8087      14.8089      14.8097      14.8075       0.0009   
+               
+     caffenet-7 network cuda cost time is 0:00:23.517769 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7788       0.7715       0.7939       0.7709       0.0107   
+               
+     caffenet-7 network cuda -libs=cudnn cost time is 0:00:24.074775 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-7 sycl network tolerance is 1e-07
+--------caffenet-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5127      14.5124      14.5132      14.5123       0.0004   
+               
+     caffenet-8 network opencl cost time is 0:00:23.399588 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.3071      20.2964      20.3445      20.2804       0.0273   
+               
+     caffenet-8 network sycl cost time is 0:00:33.157740 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8041      14.8056      14.8085      14.7982       0.0043   
+               
+     caffenet-8 network cuda cost time is 0:00:23.564482 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7921       0.7920       0.7923       0.7920       0.0001   
+               
+     caffenet-8 network cuda -libs=cudnn cost time is 0:00:23.715092 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-8 sycl network tolerance is 1e-07
+--------caffenet-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5150      14.5141      14.5170      14.5137       0.0015   
+               
+     caffenet-3 network opencl cost time is 0:00:24.030933 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.3204      20.3398      20.3616      20.2599       0.0437   
+               
+     caffenet-3 network sycl cost time is 0:00:32.904720 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8065      14.8041      14.8115      14.8038       0.0036   
+               
+     caffenet-3 network cuda cost time is 0:00:25.132198 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7709       0.7709       0.7710       0.7708       0.0001   
+               
+     caffenet-3 network cuda -libs=cudnn cost time is 0:00:22.996285 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-3 sycl network tolerance is 1e-07
+--------caffenet-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5129      14.5125      14.5156      14.5106       0.0020   
+               
+     caffenet-9 network opencl cost time is 0:00:25.248021 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.2660      20.2645      20.2720      20.2615       0.0044   
+               
+     caffenet-9 network sycl cost time is 0:00:33.725775 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8114      14.8120      14.8138      14.8085       0.0022   
+               
+     caffenet-9 network cuda cost time is 0:00:24.169379 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7800       0.7727       0.7946       0.7727       0.0103   
+               
+     caffenet-9 network cuda -libs=cudnn cost time is 0:00:22.516573 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-9 sycl network tolerance is 1e-07
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_5.cc) to share library.
+-----------caffenet----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------caffenet-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5286      14.5289      14.5313      14.5257       0.0023   
+               
+     caffenet-3 network opencl cost time is 0:00:26.852790 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.2838      20.3008      20.3115      20.2391       0.0319   
+               
+     caffenet-3 network sycl cost time is 0:00:35.701463 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8399      14.8410      14.8415      14.8373       0.0019   
+               
+     caffenet-3 network cuda cost time is 0:00:23.353525 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7763       0.7764       0.7764       0.7763       0.0001   
+               
+     caffenet-3 network cuda -libs=cudnn cost time is 0:00:22.044335 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-3 sycl network tolerance is 1e-07
+--------caffenet-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5271      14.5262      14.5303      14.5249       0.0023   
+               
+     caffenet-6 network opencl cost time is 0:00:22.782139 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.2847      20.2581      20.3550      20.2410       0.0502   
+               
+     caffenet-6 network sycl cost time is 0:00:32.437795 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8193      14.8194      14.8209      14.8175       0.0014   
+               
+     caffenet-6 network cuda cost time is 0:00:24.290005 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7696       0.7696       0.7697       0.7695       0.0001   
+               
+     caffenet-6 network cuda -libs=cudnn cost time is 0:00:22.191034 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-6 sycl network tolerance is 1e-07
+--------caffenet-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5370      14.5298      14.5520      14.5293       0.0106   
+               
+     caffenet-7 network opencl cost time is 0:00:23.016730 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.3126      20.3112      20.3215      20.3052       0.0067   
+               
+     caffenet-7 network sycl cost time is 0:00:33.561967 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8032      14.8011      14.8099      14.7988       0.0048   
+               
+     caffenet-7 network cuda cost time is 0:00:22.619229 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7723       0.7722       0.7726       0.7720       0.0003   
+               
+     caffenet-7 network cuda -libs=cudnn cost time is 0:00:23.192535 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-7 sycl network tolerance is 1e-07
+--------caffenet-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5154      14.5146      14.5189      14.5127       0.0026   
+               
+     caffenet-8 network opencl cost time is 0:00:22.652163 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.3592      20.3546      20.3816      20.3412       0.0168   
+               
+     caffenet-8 network sycl cost time is 0:00:33.161600 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.7997      14.8010      14.8034      14.7947       0.0037   
+               
+     caffenet-8 network cuda cost time is 0:00:22.781490 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7761       0.7707       0.7872       0.7704       0.0078   
+               
+     caffenet-8 network cuda -libs=cudnn cost time is 0:00:23.344123 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-8 sycl network tolerance is 1e-07
+--------caffenet-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.5147      14.5153      14.5162      14.5127       0.0015   
+               
+     caffenet-9 network opencl cost time is 0:00:22.475123 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.3034      20.3015      20.3120      20.2967       0.0064   
+               
+     caffenet-9 network sycl cost time is 0:00:32.910837 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8690      14.8680      14.8731      14.8659       0.0030   
+               
+     caffenet-9 network cuda cost time is 0:00:23.865586 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7739       0.7739       0.7741       0.7737       0.0002   
+               
+     caffenet-9 network cuda -libs=cudnn cost time is 0:00:21.994172 s
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+[0.00083788 0.00089924 0.00079693 0.00077735 0.00101609 0.00104694
+ 0.0008537  0.00090763 0.00089291 0.00084304]
+     caffenet-9 sycl network tolerance is 1e-07
+-----------vgg----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ][SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_6.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_7.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_8.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_9.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_10.cc) to share library.
+
+--------vgg16-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.2429       3.2429       3.2451       3.2405       0.0019   
+               
+        vgg16-7 network opencl cost time is 0:00:51.225809 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.4739       4.4753       4.4795       4.4668       0.0053   
+               
+        vgg16-7 network sycl cost time is 0:01:47.534262 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.4918       2.4918       2.4923       2.4912       0.0004   
+               
+        vgg16-7 network cuda cost time is 0:01:39.567173 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.4908       2.4906       2.4914       2.4905       0.0004   
+               
+        vgg16-7 network cuda -libs=cudnn cost time is 0:01:40.813797 s
+[-1.752097    1.2305813   0.63311905  1.2542254   0.45652524 -1.1011541
+  0.2585913  -0.62197393 -1.2144926   0.16652998]
+[-1.752097    1.2305813   0.63311905  1.2542254   0.45652524 -1.1011541
+  0.2585913  -0.62197393 -1.2144926   0.16652998]
+[-1.7520977   1.2305789   0.63311565  1.2542225   0.45652372 -1.1011548
+  0.25859022 -0.6219731  -1.2144916   0.16652824]
+[-1.7520977   1.2305789   0.63311565  1.2542225   0.45652372 -1.1011548
+  0.25859022 -0.6219731  -1.2144916   0.16652824]
+        vgg16-7 sycl network tolerance is 1e-05
+--------vgg19-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9019       3.9015       3.9030       3.9013       0.0007   
+               
+        vgg19-7 network opencl cost time is 0:00:55.472258 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.3688       5.3600       5.3976       5.3488       0.0208   
+               
+        vgg19-7 network sycl cost time is 0:01:54.635813 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9342       2.9333       2.9360       2.9333       0.0013   
+               
+        vgg19-7 network cuda cost time is 0:01:50.535499 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9284       2.9287       2.9289       2.9275       0.0006   
+               
+        vgg19-7 network cuda -libs=cudnn cost time is 0:01:54.692872 s
+[-1.2730732   0.66668     1.1816317   2.086801    1.4063735   0.2964607
+  1.502232   -0.5583525  -0.45473838 -0.9162486 ]
+[-1.2730732   0.66668     1.1816317   2.086801    1.4063735   0.2964607
+  1.502232   -0.5583525  -0.45473838 -0.9162486 ]
+[-1.2730727   0.6666784   1.181629    2.0867982   1.4063706   0.29646093
+  1.5022311  -0.558353   -0.45473814 -0.91625   ]
+[-1.2730727   0.6666784   1.181629    2.0867982   1.4063706   0.29646093
+  1.5022311  -0.558353   -0.45473814 -0.91625   ]
+        vgg19-7 sycl network tolerance is 1e-05
+--------vgg16-bn-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.2519       3.2519       3.2528       3.2511       0.0007   
+               
+     vgg16-bn-7 network opencl cost time is 0:02:44.875795 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.5023       4.4997       4.5249       4.4822       0.0175   
+               
+     vgg16-bn-7 network sycl cost time is 0:03:43.503502 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.4930       2.4929       2.4933       2.4928       0.0002   
+               
+     vgg16-bn-7 network cuda cost time is 0:03:19.948179 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.4925       2.4924       2.4927       2.4923       0.0001   
+               
+     vgg16-bn-7 network cuda -libs=cudnn cost time is 0:03:19.498302 s
+[-2.1416008  -0.16743532  0.8371121   1.8160793   2.1202443   0.1542536
+  1.4286737  -0.6579277  -0.9808123  -0.39989918]
+[-2.1416008  -0.16743532  0.8371121   1.8160793   2.1202443   0.1542536
+  1.4286737  -0.6579277  -0.9808123  -0.39989918]
+[-2.1416008  -0.1674346   0.83711195  1.8160793   2.1202433   0.15425262
+  1.4286727  -0.6579269  -0.9808114  -0.399896  ]
+[-2.1416008  -0.1674346   0.83711195  1.8160793   2.1202433   0.15425262
+  1.4286727  -0.6579269  -0.9808114  -0.399896  ]
+     vgg16-bn-7 sycl network tolerance is 1e-05
+--------vgg19-bn-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9071       3.9071       3.9079       3.9064       0.0006   
+               
+     vgg19-bn-7 network opencl cost time is 0:03:01.444571 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.3576       5.3530       5.3931       5.3266       0.0273   
+               
+     vgg19-bn-7 network sycl cost time is 0:03:55.774829 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9311       2.9314       2.9319       2.9299       0.0008   
+               
+     vgg19-bn-7 network cuda cost time is 0:03:52.730025 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9300       2.9299       2.9306       2.9296       0.0004   
+               
+     vgg19-bn-7 network cuda -libs=cudnn cost time is 0:03:55.536395 s
+[-1.0937208   0.74404126  1.6333033   1.8649896   1.4817302   0.63232136
+  1.5275722   0.11986796 -0.62537915  0.02320838]
+[-1.0937208   0.74404126  1.6333033   1.8649896   1.4817302   0.63232136
+  1.5275722   0.11986796 -0.62537915  0.02320838]
+[-1.0937232   0.7440418   1.6333004   1.8649867   1.481729    0.6323196
+  1.5275698   0.11986987 -0.62537783  0.02320883]
+[-1.0937232   0.7440418   1.6333004   1.8649867   1.481729    0.6323196
+  1.5275698   0.11986987 -0.62537783  0.02320883]
+     vgg19-bn-7 sycl network tolerance is 1e-05
+
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_5024_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_5024_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_5024_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_5024_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_5024_5.cc) to share library.
+-----------vgg-caffe2----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------vgg19-caffe2-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9862       3.9861       3.9887       3.9839       0.0020   
+               
+ vgg19-caffe2-3 network opencl cost time is 0:01:13.814447 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   6.7116       6.6660       6.9135       6.5553       0.1498   
+               
+ vgg19-caffe2-3 network sycl cost time is 0:02:33.288291 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9471       2.9464       2.9485       2.9464       0.0010   
+               
+ vgg19-caffe2-3 network cuda cost time is 0:02:21.350685 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9398       2.9403       2.9404       2.9387       0.0008   
+               
+ vgg19-caffe2-3 network cuda -libs=cudnn cost time is 0:02:23.253116 s
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+ vgg19-caffe2-3 sycl network tolerance is 1e-07
+--------vgg19-caffe2-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9867       3.9865       3.9877       3.9860       0.0007   
+               
+ vgg19-caffe2-6 network opencl cost time is 0:01:14.123949 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.5132       5.5100       5.5236       5.5061       0.0075   
+               
+ vgg19-caffe2-6 network sycl cost time is 0:02:11.728116 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9426       2.9427       2.9428       2.9424       0.0002   
+               
+ vgg19-caffe2-6 network cuda cost time is 0:01:59.632735 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9411       2.9409       2.9417       2.9407       0.0004   
+               
+ vgg19-caffe2-6 network cuda -libs=cudnn cost time is 0:02:28.872037 s
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+ vgg19-caffe2-6 sycl network tolerance is 1e-07
+--------vgg19-caffe2-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9880       3.9877       3.9896       3.9868       0.0012   
+               
+ vgg19-caffe2-7 network opencl cost time is 0:01:23.985800 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.5156       7.3227       8.1211       7.1030       0.4375   
+               
+ vgg19-caffe2-7 network sycl cost time is 0:02:34.857474 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9440       2.9447       2.9450       2.9423       0.0012   
+               
+ vgg19-caffe2-7 network cuda cost time is 0:02:46.690859 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9395       2.9394       2.9398       2.9392       0.0002   
+               
+ vgg19-caffe2-7 network cuda -libs=cudnn cost time is 0:02:45.137332 s
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+ vgg19-caffe2-7 sycl network tolerance is 1e-07
+--------vgg19-caffe2-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9894       3.9895       3.9914       3.9872       0.0017   
+               
+ vgg19-caffe2-8 network opencl cost time is 0:01:20.698168 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.2217       7.0438       7.5969       7.0245       0.2654   
+               
+ vgg19-caffe2-8 network sycl cost time is 0:02:29.257852 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9478       2.9468       2.9500       2.9467       0.0015   
+               
+ vgg19-caffe2-8 network cuda cost time is 0:02:37.761566 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9402       2.9405       2.9407       2.9395       0.0005   
+               
+ vgg19-caffe2-8 network cuda -libs=cudnn cost time is 0:02:39.064952 s
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+ vgg19-caffe2-8 sycl network tolerance is 1e-07
+--------vgg19-caffe2-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9876       3.9869       3.9891       3.9868       0.0011   
+               
+ vgg19-caffe2-9 network opencl cost time is 0:01:15.058659 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.7632       5.7608       5.7920       5.7369       0.0226   
+               
+ vgg19-caffe2-9 network sycl cost time is 0:02:31.536046 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9448       2.9449       2.9454       2.9441       0.0005   
+               
+ vgg19-caffe2-9 network cuda cost time is 0:02:05.260564 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.9388       2.9389       2.9392       2.9383       0.0004   
+               
+ vgg19-caffe2-9 network cuda -libs=cudnn cost time is 0:02:19.387011 s
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778175 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+[0.00018572 0.00135831 0.00065237 0.0015956  0.00230531 0.00202891
+ 0.00778176 0.00018034 0.00026747 0.00023561]
+ vgg19-caffe2-9 sycl network tolerance is 1e-07
+
+-----------googlenet----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------googlenet-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6706       3.6707       3.6715       3.6695       0.0008   
+               
+    googlenet-3 network opencl cost time is 0:02:15.976732 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  48.7670      48.7128      48.8834      48.7049       0.0824   
+               
+    googlenet-3 network sycl cost time is 0:02:40.798686 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.6950       7.6949       7.6958       7.6943       0.0006   
+               
+    googlenet-3 network cuda cost time is 0:02:27.036284 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.6617       2.6618       2.6620       2.6612       0.0003   
+               
+    googlenet-3 network cuda -libs=cudnn cost time is 0:02:24.056229 s
+[4.0988356e-04 6.1482954e-04 6.2022853e-04 8.3284662e-04 3.2264001e-03
+ 3.5589193e-03 1.3844526e-02 3.9190258e-05 5.0010702e-05 2.1948692e-05]
+[4.0988010e-04 6.1482459e-04 6.2022964e-04 8.3284115e-04 3.2263838e-03
+ 3.5588786e-03 1.3844562e-02 3.9190094e-05 5.0010585e-05 2.1948435e-05]
+[4.0988353e-04 6.1482942e-04 6.2022835e-04 8.3284645e-04 3.2263997e-03
+ 3.5589200e-03 1.3844519e-02 3.9190218e-05 5.0010687e-05 2.1948694e-05][SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_11.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_12.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_13.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_14.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_15.cc) to share library.
+
+[4.0988371e-04 6.1482965e-04 6.2022859e-04 8.3284639e-04 3.2264011e-03
+ 3.5589212e-03 1.3844524e-02 3.9190265e-05 5.0010713e-05 2.1948699e-05]
+    googlenet-3 sycl network tolerance is 1e-06
+--------googlenet-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6724       3.6718       3.6739       3.6715       0.0011   
+               
+    googlenet-6 network opencl cost time is 0:02:13.425374 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  48.7704      48.7464      48.8588      48.7061       0.0646   
+               
+    googlenet-6 network sycl cost time is 0:02:42.071935 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.6950       7.6950       7.6956       7.6944       0.0005   
+               
+    googlenet-6 network cuda cost time is 0:02:29.803295 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.8940       2.8944       2.8950       2.8927       0.0010   
+               
+    googlenet-6 network cuda -libs=cudnn cost time is 0:02:23.217965 s
+[4.0988356e-04 6.1482954e-04 6.2022853e-04 8.3284662e-04 3.2264001e-03
+ 3.5589193e-03 1.3844526e-02 3.9190258e-05 5.0010702e-05 2.1948692e-05]
+[4.0988286e-04 6.1482517e-04 6.2022341e-04 8.3283830e-04 3.2263820e-03
+ 3.5589172e-03 1.3844508e-02 3.9189999e-05 5.0010556e-05 2.1948510e-05]
+[4.0988353e-04 6.1482942e-04 6.2022835e-04 8.3284645e-04 3.2263997e-03
+ 3.5589200e-03 1.3844519e-02 3.9190218e-05 5.0010687e-05 2.1948694e-05]
+[4.0988371e-04 6.1482965e-04 6.2022859e-04 8.3284639e-04 3.2264011e-03
+ 3.5589212e-03 1.3844524e-02 3.9190265e-05 5.0010713e-05 2.1948699e-05]
+    googlenet-6 sycl network tolerance is 1e-06
+--------googlenet-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6733       3.6732       3.6737       3.6731       0.0002   
+               
+    googlenet-7 network opencl cost time is 0:02:14.130599 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  48.7908      48.7357      48.9182      48.7185       0.0904   
+               
+    googlenet-7 network sycl cost time is 0:02:41.631956 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.6928       7.6929       7.6936       7.6920       0.0007   
+               
+    googlenet-7 network cuda cost time is 0:02:28.497584 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.8592       2.8589       2.8598       2.8589       0.0004   
+               
+    googlenet-7 network cuda -libs=cudnn cost time is 0:02:27.389197 s
+[4.0988356e-04 6.1482954e-04 6.2022853e-04 8.3284662e-04 3.2264001e-03
+ 3.5589193e-03 1.3844526e-02 3.9190258e-05 5.0010702e-05 2.1948692e-05]
+[4.09880973e-04 6.14828197e-04 6.20230043e-04 8.32842488e-04
+ 3.22639639e-03 3.55888903e-03 1.38445245e-02 3.91901376e-05
+ 5.00107344e-05 2.19486064e-05]
+[4.0988353e-04 6.1482942e-04 6.2022835e-04 8.3284645e-04 3.2263997e-03
+ 3.5589200e-03 1.3844519e-02 3.9190218e-05 5.0010687e-05 2.1948694e-05]
+[4.0988371e-04 6.1482965e-04 6.2022859e-04 8.3284639e-04 3.2264011e-03
+ 3.5589212e-03 1.3844524e-02 3.9190265e-05 5.0010713e-05 2.1948699e-05]
+    googlenet-7 sycl network tolerance is 1e-06
+--------googlenet-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6739       3.6736       3.6749       3.6732       0.0008   
+               
+    googlenet-8 network opencl cost time is 0:02:13.837651 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  48.7899      48.7913      48.7954      48.7829       0.0052   
+               
+    googlenet-8 network sycl cost time is 0:02:40.111429 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.6946       7.6948       7.6949       7.6942       0.0003   
+               
+    googlenet-8 network cuda cost time is 0:02:27.449256 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.8144       2.8143       2.8146       2.8142       0.0001   
+               
+    googlenet-8 network cuda -libs=cudnn cost time is 0:02:26.751394 s
+[4.0988356e-04 6.1482954e-04 6.2022853e-04 8.3284662e-04 3.2264001e-03
+ 3.5589193e-03 1.3844526e-02 3.9190258e-05 5.0010702e-05 2.1948692e-05]
+[4.0988074e-04 6.1482814e-04 6.2022533e-04 8.3284045e-04 3.2263899e-03
+ 3.5589004e-03 1.3844490e-02 3.9190189e-05 5.0010658e-05 2.1948699e-05]
+[4.0988353e-04 6.1482942e-04 6.2022835e-04 8.3284645e-04 3.2263997e-03
+ 3.5589200e-03 1.3844519e-02 3.9190218e-05 5.0010687e-05 2.1948694e-05]
+[4.0988371e-04 6.1482965e-04 6.2022859e-04 8.3284639e-04 3.2264011e-03
+ 3.5589212e-03 1.3844524e-02 3.9190265e-05 5.0010713e-05 2.1948699e-05]
+    googlenet-8 sycl network tolerance is 1e-06
+--------googlenet-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6705       3.6708       3.6709       3.6698       0.0005   
+               
+    googlenet-9 network opencl cost time is 0:02:14.666346 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  48.9248      48.9452      48.9999      48.8294       0.0711   
+               
+    googlenet-9 network sycl cost time is 0:02:39.838838 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.6958       7.6959       7.6968       7.6945       0.0009   
+               
+    googlenet-9 network cuda cost time is 0:02:28.654599 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.6541       2.6541       2.6542       2.6540       0.0001   
+               
+    googlenet-9 network cuda -libs=cudnn cost time is 0:02:25.186354 s
+[4.0988356e-04 6.1482954e-04 6.2022853e-04 8.3284662e-04 3.2264001e-03
+ 3.5589193e-03 1.3844526e-02 3.9190258e-05 5.0010702e-05 2.1948692e-05]
+[4.0988112e-04 6.1482529e-04 6.2022830e-04 8.3283923e-04 3.2264087e-03
+ 3.5589295e-03 1.3844609e-02 3.9190025e-05 5.0010443e-05 2.1948606e-05]
+[4.0988353e-04 6.1482942e-04 6.2022835e-04 8.3284645e-04 3.2263997e-03
+ 3.5589200e-03 1.3844519e-02 3.9190218e-05 5.0010687e-05 2.1948694e-05]
+[4.0988371e-04 6.1482965e-04 6.2022859e-04 8.3284639e-04 3.2264011e-03
+ 3.5589212e-03 1.3844524e-02 3.9190265e-05 5.0010713e-05 2.1948699e-05]
+    googlenet-9 sycl network tolerance is 1e-06
+-----------rcnn_ilsvrc13----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------rcnn-ilsvrc13-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.4308      14.4302      14.4327      14.4295       0.0014   
+               
+rcnn-ilsvrc13-3 network opencl cost time is 0:00:21.973457 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.0426      20.0432      20.0471      20.0375       0.0040   
+               
+rcnn-ilsvrc13-3 network sycl cost time is 0:00:31.257807 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.7821      14.7799      14.7875      14.7789       0.0038   
+               
+rcnn-ilsvrc13-3 network cuda cost time is 0:00:21.622376 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7420       0.7421       0.7422       0.7418       0.0002   
+               [SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_16.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_17.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_18.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_19.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_20.cc) to share library.
+
+rcnn-ilsvrc13-3 network cuda -libs=cudnn cost time is 0:00:22.170423 s
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+rcnn-ilsvrc13-3 sycl network tolerance is 1e-07
+--------rcnn-ilsvrc13-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.4139      14.4144      14.4153      14.4120       0.0014   
+               
+rcnn-ilsvrc13-6 network opencl cost time is 0:00:21.110003 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.1080      20.0643      20.1959      20.0639       0.0622   
+               
+rcnn-ilsvrc13-6 network sycl cost time is 0:00:30.568686 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.7842      14.7828      14.7877      14.7821       0.0025   
+               
+rcnn-ilsvrc13-6 network cuda cost time is 0:00:21.859441 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7452       0.7452       0.7454       0.7450       0.0001   
+               
+rcnn-ilsvrc13-6 network cuda -libs=cudnn cost time is 0:00:22.238094 s
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+rcnn-ilsvrc13-6 sycl network tolerance is 1e-07
+--------rcnn-ilsvrc13-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.4288      14.4167      14.4575      14.4122       0.0204   
+               
+rcnn-ilsvrc13-7 network opencl cost time is 0:00:21.210649 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.1345      20.1253      20.1649      20.1132       0.0221   
+               
+rcnn-ilsvrc13-7 network sycl cost time is 0:00:31.140999 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8608      14.8611      14.8627      14.8587       0.0017   
+               
+rcnn-ilsvrc13-7 network cuda cost time is 0:00:23.340396 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7396       0.7397       0.7403       0.7387       0.0007   
+               
+rcnn-ilsvrc13-7 network cuda -libs=cudnn cost time is 0:00:21.239989 s
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+rcnn-ilsvrc13-7 sycl network tolerance is 1e-07
+--------rcnn-ilsvrc13-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.4816      14.4806      14.4847      14.4796       0.0022   
+               
+rcnn-ilsvrc13-8 network opencl cost time is 0:00:22.121092 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.0619      20.0466      20.1025      20.0367       0.0290   
+               
+rcnn-ilsvrc13-8 network sycl cost time is 0:00:31.024190 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8587      14.8589      14.8605      14.8567       0.0016   
+               
+rcnn-ilsvrc13-8 network cuda cost time is 0:00:22.758385 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7461       0.7460       0.7466       0.7457       0.0004   
+               
+rcnn-ilsvrc13-8 network cuda -libs=cudnn cost time is 0:00:21.239218 s
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+rcnn-ilsvrc13-8 sycl network tolerance is 1e-07
+--------rcnn-ilsvrc13-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.4841      14.4827      14.4880      14.4815       0.0028   
+               
+rcnn-ilsvrc13-9 network opencl cost time is 0:00:22.298527 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.1505      20.2015      20.2139      20.0362       0.0810   
+               
+rcnn-ilsvrc13-9 network sycl cost time is 0:00:30.392456 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8546      14.8540      14.8568      14.8530       0.0016   
+               
+rcnn-ilsvrc13-9 network cuda cost time is 0:00:22.786127 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.7402       0.7399       0.7408       0.7399       0.0004   
+               
+rcnn-ilsvrc13-9 network cuda -libs=cudnn cost time is 0:00:20.567810 s
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+[-1.         -1.046879   -1.1998895  -1.         -0.99535614 -1.2694309
+ -1.002315   -1.4516387  -1.4362154  -1.0016934 ]
+rcnn-ilsvrc13-9 sycl network tolerance is 1e-07
+-----------mobilenet----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------mobilenetv2-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.7703       1.7700       1.7710       1.7699       0.0005   
+               
+  mobilenetv2-7 network opencl cost time is 0:07:07.790010 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  20.3728      20.3595      20.4061      20.3528       0.0237   
+               
+  mobilenetv2-7 network sycl cost time is 0:07:22.819305 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.2809       2.2809       2.2810       2.2808       0.0001   
+               
+  mobilenetv2-7 network cuda cost time is 0:07:09.210817 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.9771       1.9770       1.9772       1.9769       0.0001   
+               [SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_21.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_22.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_23.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_24.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_25.cc) to share library.
+
+  mobilenetv2-7 network cuda -libs=cudnn cost time is 0:07:10.951642 s
+[-2.4655387   2.2031145   1.0753084   0.5325784   2.488344    0.4610267
+  1.1418129  -1.6244512  -1.1760186   0.82912815]
+[-2.4655387   2.2031145   1.0753084   0.5325784   2.488344    0.4610267
+  1.1418129  -1.6244512  -1.1760186   0.82912815]
+[-2.4655387   2.2031145   1.0753087   0.5325785   2.4883442   0.46102673
+  1.1418128  -1.6244512  -1.1760186   0.82912815]
+[-2.4655387   2.2031145   1.0753084   0.5325784   2.488344    0.4610267
+  1.1418129  -1.6244512  -1.1760186   0.82912815]
+  mobilenetv2-7 sycl network tolerance is 1e-07
+-----------mobilenet_2----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------mobilenetv2-10----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.5089       1.5097       1.5101       1.5070       0.0014   
+               
+ mobilenetv2-10 network opencl cost time is 0:01:37.062233 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.9051      14.9023      14.9246      14.8885       0.0149   
+               
+ mobilenetv2-10 network sycl cost time is 0:01:53.164744 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.8645       1.8645       1.8646       1.8644       0.0001   
+               
+ mobilenetv2-10 network cuda cost time is 0:01:41.399755 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.8637       1.8637       1.8638       1.8636       0.0001   
+               
+ mobilenetv2-10 network cuda -libs=cudnn cost time is 0:01:41.129716 s
+[-2.2868397   0.8517093   1.2902771   0.8290863   0.98352987  1.0021281
+  1.6601038  -0.92092997 -1.6099936  -0.6452652 ]
+[-2.2868397   0.8517093   1.2902771   0.8290863   0.98352987  1.0021281
+  1.6601038  -0.92092997 -1.6099936  -0.6452652 ]
+[-2.2868397   0.85170925  1.2902772   0.8290863   0.9835299   1.0021281
+  1.6601038  -0.92093    -1.6099936  -0.64526516]
+[-2.2868397   0.8517093   1.2902771   0.8290863   0.98352987  1.0021281
+  1.6601038  -0.92092997 -1.6099936  -0.6452652 ]
+ mobilenetv2-10 sycl network tolerance is 1e-07
+-----------inception_v1----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------inception-v1-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.5959       9.5966       9.5987       9.5924       0.0026   
+               
+ inception-v1-3 network opencl cost time is 0:02:16.591510 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  44.3810      44.4150      44.4359      44.2922       0.0634   
+               
+ inception-v1-3 network sycl cost time is 0:02:46.299956 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.3501       9.3497       9.3513       9.3493       0.0009   
+               
+ inception-v1-3 network cuda cost time is 0:02:31.223313 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.7111       2.7108       2.7117       2.7107       0.0005   
+               
+ inception-v1-3 network cuda -libs=cudnn cost time is 0:02:27.501543 s
+[6.0408295e-04 1.3072187e-03 1.1528494e-03 1.2727921e-03 4.1517336e-03
+ 3.3565108e-03 1.2427582e-02 7.3246803e-05 7.9005542e-05 3.8785616e-05]
+[6.0408481e-04 1.3072245e-03 1.1528610e-03 1.2727998e-03 4.1517862e-03
+ 3.3564973e-03 1.2427551e-02 7.3249008e-05 7.9007397e-05 3.8786526e-05]
+[6.0408289e-04 1.3072186e-03 1.1528493e-03 1.2727916e-03 4.1517341e-03
+ 3.3565126e-03 1.2427582e-02 7.3246825e-05 7.9005535e-05 3.8785623e-05]
+[6.0408289e-04 1.3072187e-03 1.1528493e-03 1.2727922e-03 4.1517341e-03
+ 3.3565108e-03 1.2427582e-02 7.3246818e-05 7.9005535e-05 3.8785623e-05]
+ inception-v1-3 sycl network tolerance is 1e-07
+--------inception-v1-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.6012       9.5962       9.6128       9.5946       0.0083   
+               
+ inception-v1-6 network opencl cost time is 0:02:13.884655 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  44.4974      44.5214      44.5277      44.4431       0.0385   
+               
+ inception-v1-6 network sycl cost time is 0:02:42.250760 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.3478       9.3474       9.3491       9.3468       0.0010   
+               
+ inception-v1-6 network cuda cost time is 0:02:30.840012 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.6819       2.6819       2.6822       2.6816       0.0003   
+               
+ inception-v1-6 network cuda -libs=cudnn cost time is 0:02:28.605010 s
+[6.0408295e-04 1.3072187e-03 1.1528494e-03 1.2727921e-03 4.1517336e-03
+ 3.3565108e-03 1.2427582e-02 7.3246803e-05 7.9005542e-05 3.8785616e-05]
+[6.0409098e-04 1.3072541e-03 1.1528723e-03 1.2728038e-03 4.1517918e-03
+ 3.3564949e-03 1.2427535e-02 7.3248950e-05 7.9006852e-05 3.8785918e-05]
+[6.0408289e-04 1.3072186e-03 1.1528493e-03 1.2727916e-03 4.1517341e-03
+ 3.3565126e-03 1.2427582e-02 7.3246825e-05 7.9005535e-05 3.8785623e-05]
+[6.0408289e-04 1.3072187e-03 1.1528493e-03 1.2727922e-03 4.1517341e-03
+ 3.3565108e-03 1.2427582e-02 7.3246818e-05 7.9005535e-05 3.8785623e-05]
+ inception-v1-6 sycl network tolerance is 1e-07
+--------inception-v1-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.5930       9.5928       9.5944       9.5918       0.0011   
+               
+ inception-v1-7 network opencl cost time is 0:02:16.066448 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  44.4297      44.4344      44.4762      44.3785       0.0400   
+               
+ inception-v1-7 network sycl cost time is 0:02:45.237516 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.3469       9.3473       9.3482       9.3452       0.0013   
+               
+ inception-v1-7 network cuda cost time is 0:02:31.371147 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.8739       2.8728       2.8765       2.8725       0.0018   
+               
+ inception-v1-7 network cuda -libs=cudnn cost time is 0:02:28.857038 s
+[6.0408295e-04 1.3072187e-03 1.1528494e-03 1.2727921e-03 4.1517336e-03
+ 3.3565108e-03 1.2427582e-02 7.3246803e-05 7.9005542e-05 3.8785616e-05]
+[6.0408463e-04 1.3072023e-03 1.1528304e-03 1.2727649e-03 4.1516786e-03
+ 3.3565217e-03 1.2427589e-02 7.3246811e-05 7.9005680e-05 3.8785587e-05]
+[6.0408289e-04 1.3072186e-03 1.1528493e-03 1.2727916e-03 4.1517341e-03
+ 3.3565126e-03 1.2427582e-02 7.3246825e-05 7.9005535e-05 3.8785623e-05]
+[6.0408289e-04 1.3072187e-03 1.1528493e-03 1.2727922e-03 4.1517341e-03
+ 3.3565108e-03 1.2427582e-02 7.3246818e-05 7.9005535e-05 3.8785623e-05]
+ inception-v1-7 sycl network tolerance is 1e-07
+--------inception-v1-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.6322       9.6319       9.6328       9.6319       0.0004   
+               
+ inception-v1-8 network opencl cost time is 0:02:17.567204 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  44.4253      44.4033      44.5542      44.3184       0.0975   
+               [SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_26.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_27.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_28.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_29.cc) to share library.
+
+ inception-v1-8 network sycl cost time is 0:02:45.452943 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.3479       9.3469       9.3504       9.3464       0.0018   
+               
+ inception-v1-8 network cuda cost time is 0:02:31.010710 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.7330       2.7330       2.7333       2.7328       0.0002   
+               
+ inception-v1-8 network cuda -libs=cudnn cost time is 0:02:25.036558 s
+[6.0408295e-04 1.3072187e-03 1.1528494e-03 1.2727921e-03 4.1517336e-03
+ 3.3565108e-03 1.2427582e-02 7.3246803e-05 7.9005542e-05 3.8785616e-05]
+[6.0406770e-04 1.3071812e-03 1.1528261e-03 1.2727771e-03 4.1516670e-03
+ 3.3565909e-03 1.2427815e-02 7.3244584e-05 7.9002719e-05 3.8783943e-05]
+[6.0408289e-04 1.3072186e-03 1.1528493e-03 1.2727916e-03 4.1517341e-03
+ 3.3565126e-03 1.2427582e-02 7.3246825e-05 7.9005535e-05 3.8785623e-05]
+[6.0408289e-04 1.3072187e-03 1.1528493e-03 1.2727922e-03 4.1517341e-03
+ 3.3565108e-03 1.2427582e-02 7.3246818e-05 7.9005535e-05 3.8785623e-05]
+ inception-v1-8 sycl network tolerance is 1e-07
+--------inception-v1-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.5948       9.5918       9.6013       9.5913       0.0046   
+               
+ inception-v1-9 network opencl cost time is 0:02:16.972890 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  44.3538      44.3567      44.3576      44.3470       0.0048   
+               
+ inception-v1-9 network sycl cost time is 0:02:42.209031 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.3482       9.3486       9.3488       9.3471       0.0007   
+               
+ inception-v1-9 network cuda cost time is 0:02:30.993492 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.6606       2.6606       2.6608       2.6605       0.0001   
+               
+ inception-v1-9 network cuda -libs=cudnn cost time is 0:02:28.350402 s
+[6.0408295e-04 1.3072187e-03 1.1528494e-03 1.2727921e-03 4.1517336e-03
+ 3.3565108e-03 1.2427582e-02 7.3246803e-05 7.9005542e-05 3.8785616e-05]
+[6.0409098e-04 1.3072541e-03 1.1528723e-03 1.2728038e-03 4.1517918e-03
+ 3.3564949e-03 1.2427535e-02 7.3248950e-05 7.9006852e-05 3.8785918e-05]
+[6.0408289e-04 1.3072186e-03 1.1528493e-03 1.2727916e-03 4.1517341e-03
+ 3.3565126e-03 1.2427582e-02 7.3246825e-05 7.9005535e-05 3.8785623e-05]
+[6.0408289e-04 1.3072187e-03 1.1528493e-03 1.2727922e-03 4.1517341e-03
+ 3.3565108e-03 1.2427582e-02 7.3246818e-05 7.9005535e-05 3.8785623e-05]
+ inception-v1-9 sycl network tolerance is 1e-07
+-----------inception_v2----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------inception-v2-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.2448       5.2446       5.2453       5.2445       0.0004   
+               
+ inception-v2-3 network opencl cost time is 0:12:36.618884 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  63.0747      63.0702      63.0900      63.0638       0.0111   
+               
+ inception-v2-3 network sycl cost time is 0:13:04.220748 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.6343      13.6341      13.6347      13.6341       0.0003   
+               
+ inception-v2-3 network cuda cost time is 0:12:56.385030 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.0454       4.0455       4.0456       4.0450       0.0002   
+               
+ inception-v2-3 network cuda -libs=cudnn cost time is 0:12:53.149730 s
+[1.1874866e-04 2.1796660e-04 7.2591327e-04 3.3114160e-05 1.2357839e-04
+ 1.7566599e-03 8.6296233e-05 2.9975103e-04 3.1781368e-04 4.7206914e-04]
+[1.18748525e-04 2.17966473e-04 7.25911814e-04 3.31140945e-05
+ 1.23578124e-04 1.75665994e-03 8.62960369e-05 2.99749954e-04
+ 3.17813159e-04 4.72068496e-04]
+[1.18748605e-04 2.17966503e-04 7.25913327e-04 3.31142110e-05
+ 1.23578444e-04 1.75665680e-03 8.62961388e-05 2.99750973e-04
+ 3.17813945e-04 4.72069456e-04]
+[1.1874861e-04 2.1796665e-04 7.2591339e-04 3.3114182e-05 1.2357846e-04
+ 1.7566595e-03 8.6296226e-05 2.9975089e-04 3.1781386e-04 4.7206954e-04]
+ inception-v2-3 sycl network tolerance is 1e-07
+--------inception-v2-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.2450       5.2446       5.2460       5.2444       0.0007   
+               
+ inception-v2-6 network opencl cost time is 0:12:33.296444 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  63.1628      63.0565      63.3871      63.0447       0.1587   
+               
+ inception-v2-6 network sycl cost time is 0:12:59.785590 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.6323      13.6328      13.6336      13.6305       0.0013   
+               
+ inception-v2-6 network cuda cost time is 0:13:00.544690 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9855       3.9855       3.9856       3.9854       0.0001   
+               
+ inception-v2-6 network cuda -libs=cudnn cost time is 0:12:51.867674 s
+[1.1874866e-04 2.1796660e-04 7.2591327e-04 3.3114160e-05 1.2357839e-04
+ 1.7566599e-03 8.6296233e-05 2.9975103e-04 3.1781368e-04 4.7206914e-04]
+[1.1874879e-04 2.1796674e-04 7.2591199e-04 3.3114244e-05 1.2357817e-04
+ 1.7566587e-03 8.6296022e-05 2.9975115e-04 3.1781383e-04 4.7206951e-04]
+[1.18748605e-04 2.17966503e-04 7.25913327e-04 3.31142110e-05
+ 1.23578444e-04 1.75665680e-03 8.62961388e-05 2.99750973e-04
+ 3.17813945e-04 4.72069456e-04]
+[1.1874861e-04 2.1796665e-04 7.2591339e-04 3.3114182e-05 1.2357846e-04
+ 1.7566595e-03 8.6296226e-05 2.9975089e-04 3.1781386e-04 4.7206954e-04]
+ inception-v2-6 sycl network tolerance is 1e-07
+--------inception-v2-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.2466       5.2462       5.2478       5.2458       0.0009   
+               
+ inception-v2-7 network opencl cost time is 0:12:33.533599 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  63.1320      63.1016      63.1948      63.0997       0.0444   
+               
+ inception-v2-7 network sycl cost time is 0:12:52.804773 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.6319      13.6317      13.6325      13.6314       0.0005   
+               
+ inception-v2-7 network cuda cost time is 0:12:59.483427 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9384       3.9385       3.9385       3.9384       0.0001   
+               
+ inception-v2-7 network cuda -libs=cudnn cost time is 0:12:59.878960 s
+[1.1874866e-04 2.1796660e-04 7.2591327e-04 3.3114160e-05 1.2357839e-04
+ 1.7566599e-03 8.6296233e-05 2.9975103e-04 3.1781368e-04 4.7206914e-04]
+[1.1874823e-04 2.1796518e-04 7.2590885e-04 3.3114040e-05 1.2357804e-04
+ 1.7566603e-03 8.6295775e-05 2.9975013e-04 3.1781368e-04 4.7207018e-04]
+[1.18748605e-04 2.17966503e-04 7.25913327e-04 3.31142110e-05
+ 1.23578444e-04 1.75665680e-03 8.62961388e-05 2.99750973e-04
+ 3.17813945e-04 4.72069456e-04]
+[1.1874861e-04 2.1796665e-04 7.2591339e-04 3.3114182e-05 1.2357846e-04
+ 1.7566595e-03 8.6296226e-05 2.9975089e-04 3.1781386e-04 4.7206954e-04][SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_30.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_13075_31.cc) to share library.
+
+ inception-v2-7 sycl network tolerance is 1e-07
+--------inception-v2-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.2474       5.2463       5.2499       5.2460       0.0018   
+               
+ inception-v2-8 network opencl cost time is 0:13:23.106861 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  63.2512      63.2664      63.3892      63.0980       0.1194   
+               
+ inception-v2-8 network sycl cost time is 0:13:45.609213 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.6370      13.6369      13.6377      13.6365       0.0005   
+               
+ inception-v2-8 network cuda cost time is 0:13:59.112896 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9420       3.9420       3.9422       3.9417       0.0002   
+               
+ inception-v2-8 network cuda -libs=cudnn cost time is 0:13:43.985041 s
+[1.1874866e-04 2.1796660e-04 7.2591327e-04 3.3114160e-05 1.2357839e-04
+ 1.7566599e-03 8.6296233e-05 2.9975103e-04 3.1781368e-04 4.7206914e-04]
+[1.1874823e-04 2.1796518e-04 7.2590885e-04 3.3114040e-05 1.2357804e-04
+ 1.7566603e-03 8.6295775e-05 2.9975013e-04 3.1781368e-04 4.7207018e-04]
+[1.18748605e-04 2.17966503e-04 7.25913327e-04 3.31142110e-05
+ 1.23578444e-04 1.75665680e-03 8.62961388e-05 2.99750973e-04
+ 3.17813945e-04 4.72069456e-04]
+[1.1874861e-04 2.1796665e-04 7.2591339e-04 3.3114182e-05 1.2357846e-04
+ 1.7566595e-03 8.6296226e-05 2.9975089e-04 3.1781386e-04 4.7206954e-04]
+ inception-v2-8 sycl network tolerance is 1e-07
+--------inception-v2-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.2447       5.2447       5.2452       5.2442       0.0004   
+               
+ inception-v2-9 network opencl cost time is 0:13:30.688901 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  63.1854      63.1665      63.2613      63.1282       0.0559   
+               
+ inception-v2-9 network sycl cost time is 0:13:50.540995 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  13.6334      13.6340      13.6341      13.6323       0.0008   
+               
+ inception-v2-9 network cuda cost time is 0:13:51.985676 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.9853       3.9854       3.9854       3.9850       0.0002   
+               
+ inception-v2-9 network cuda -libs=cudnn cost time is 0:13:46.921191 s
+[1.1874866e-04 2.1796660e-04 7.2591327e-04 3.3114160e-05 1.2357839e-04
+ 1.7566599e-03 8.6296233e-05 2.9975103e-04 3.1781368e-04 4.7206914e-04]
+[1.1874879e-04 2.1796674e-04 7.2591199e-04 3.3114244e-05 1.2357817e-04
+ 1.7566587e-03 8.6296022e-05 2.9975115e-04 3.1781383e-04 4.7206951e-04]
+[1.18748605e-04 2.17966503e-04 7.25913327e-04 3.31142110e-05
+ 1.23578444e-04 1.75665680e-03 8.62961388e-05 2.99750973e-04
+ 3.17813945e-04 4.72069456e-04]
+[1.1874861e-04 2.1796665e-04 7.2591339e-04 3.3114182e-05 1.2357846e-04
+ 1.7566595e-03 8.6296226e-05 2.9975089e-04 3.1781386e-04 4.7206954e-04]
+ inception-v2-9 sycl network tolerance is 1e-07
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_22056_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_22867_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_22867_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_22867_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_22867_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_22867_5.cc) to share library.
+-----------zfnet-512----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------zfnet512-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.5320       3.5318       3.5327       3.5314       0.0005   
+               
+     zfnet512-3 network opencl cost time is 0:00:23.351287 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  45.5529      45.5483      45.5646      45.5458       0.0083   
+               
+     zfnet512-3 network sycl cost time is 0:00:30.216208 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.9515       4.9519       4.9521       4.9507       0.0006   
+               
+     zfnet512-3 network cuda cost time is 0:00:23.845375 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.0790       1.0791       1.0791       1.0790       0.0001   
+               
+     zfnet512-3 network cuda -libs=cudnn cost time is 0:00:22.008368 s
+[4.5602664e-04 6.8785105e-04 2.7717161e-03 7.9915598e-03 3.4377605e-03
+ 2.6319232e-03 5.2318620e-03 3.6624384e-05 7.9370999e-05 5.8558435e-05]
+[4.5602664e-04 6.8785076e-04 2.7717161e-03 7.9915617e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371057e-05 5.8558468e-05]
+[4.5602661e-04 6.8785076e-04 2.7717147e-03 7.9915598e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371021e-05 5.8558438e-05]
+[4.5602652e-04 6.8785070e-04 2.7717156e-03 7.9915617e-03 3.4377605e-03
+ 2.6319216e-03 5.2318610e-03 3.6624384e-05 7.9371006e-05 5.8558457e-05]
+     zfnet512-3 sycl network tolerance is 1e-07
+--------zfnet512-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.5308       3.5311       3.5315       3.5299       0.0007   
+               
+     zfnet512-6 network opencl cost time is 0:00:19.591232 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  45.3817      45.3884      45.3907      45.3659       0.0112   
+               
+     zfnet512-6 network sycl cost time is 0:00:30.925686 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.9497       4.9497       4.9514       4.9480       0.0014   
+               
+     zfnet512-6 network cuda cost time is 0:00:23.270091 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.0778       1.0779       1.0779       1.0778       0.0000   
+               
+     zfnet512-6 network cuda -libs=cudnn cost time is 0:00:21.180309 s
+[4.5602664e-04 6.8785105e-04 2.7717161e-03 7.9915598e-03 3.4377605e-03
+ 2.6319232e-03 5.2318620e-03 3.6624384e-05 7.9370999e-05 5.8558435e-05]
+[4.5602664e-04 6.8785076e-04 2.7717161e-03 7.9915617e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371057e-05 5.8558468e-05]
+[4.5602661e-04 6.8785076e-04 2.7717147e-03 7.9915598e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371021e-05 5.8558438e-05]
+[4.5602652e-04 6.8785070e-04 2.7717156e-03 7.9915617e-03 3.4377605e-03
+ 2.6319216e-03 5.2318610e-03 3.6624384e-05 7.9371006e-05 5.8558457e-05]
+     zfnet512-6 sycl network tolerance is 1e-07
+--------zfnet512-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.5316       3.5320       3.5329       3.5299       0.0012   
+               
+     zfnet512-7 network opencl cost time is 0:00:19.456125 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  45.5043      45.4887      45.5390      45.4852       0.0246   
+               
+     zfnet512-7 network sycl cost time is 0:00:30.864148 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.9417       4.9417       4.9423       4.9412       0.0005   
+               
+     zfnet512-7 network cuda cost time is 0:00:23.205994 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.0786       1.0786       1.0787       1.0785       0.0001   
+               
+     zfnet512-7 network cuda -libs=cudnn cost time is 0:00:21.401620 s
+[4.5602664e-04 6.8785105e-04 2.7717161e-03 7.9915598e-03 3.4377605e-03
+ 2.6319232e-03 5.2318620e-03 3.6624384e-05 7.9370999e-05 5.8558435e-05]
+[4.5602664e-04 6.8785076e-04 2.7717161e-03 7.9915617e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371057e-05 5.8558468e-05]
+[4.5602661e-04 6.8785076e-04 2.7717147e-03 7.9915598e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371021e-05 5.8558438e-05]
+[4.5602652e-04 6.8785070e-04 2.7717156e-03 7.9915617e-03 3.4377605e-03
+ 2.6319216e-03 5.2318610e-03 3.6624384e-05 7.9371006e-05 5.8558457e-05]
+     zfnet512-7 sycl network tolerance is 1e-07
+--------zfnet512-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.5221       3.5219       3.5230       3.5214       0.0007   
+               
+     zfnet512-8 network opencl cost time is 0:00:19.461847 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  45.4809      45.4030      45.6566      45.3830       0.1245   
+               
+     zfnet512-8 network sycl cost time is 0:00:31.132757 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.9436       4.9447       4.9449       4.9412       0.0017   
+               
+     zfnet512-8 network cuda cost time is 0:00:21.975628 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.0797       1.0796       1.0799       1.0796       0.0002   
+               
+     zfnet512-8 network cuda -libs=cudnn cost time is 0:00:21.253106 s
+[4.5602664e-04 6.8785105e-04 2.7717161e-03 7.9915598e-03 3.4377605e-03
+ 2.6319232e-03 5.2318620e-03 3.6624384e-05 7.9370999e-05 5.8558435e-05]
+[4.5602664e-04 6.8785076e-04 2.7717161e-03 7.9915617e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371057e-05 5.8558468e-05]
+[4.5602661e-04 6.8785076e-04 2.7717147e-03 7.9915598e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371021e-05 5.8558438e-05]
+[4.5602652e-04 6.8785070e-04 2.7717156e-03 7.9915617e-03 3.4377605e-03
+ 2.6319216e-03 5.2318610e-03 3.6624384e-05 7.9371006e-05 5.8558457e-05]
+     zfnet512-8 sycl network tolerance is 1e-07
+--------zfnet512-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.5230       3.5236       3.5239       3.5215       0.0010   
+               
+     zfnet512-9 network opencl cost time is 0:00:18.217995 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  45.4259      45.3989      45.4938      45.3851       0.0483   
+               
+     zfnet512-9 network sycl cost time is 0:00:30.467709 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.9433       4.9433       4.9435       4.9430       0.0002   
+               
+     zfnet512-9 network cuda cost time is 0:00:23.588324 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.0811       1.0811       1.0811       1.0810       0.0000   
+               
+     zfnet512-9 network cuda -libs=cudnn cost time is 0:00:21.453905 s
+[4.5602664e-04 6.8785105e-04 2.7717161e-03 7.9915598e-03 3.4377605e-03
+ 2.6319232e-03 5.2318620e-03 3.6624384e-05 7.9370999e-05 5.8558435e-05]
+[4.5602664e-04 6.8785076e-04 2.7717161e-03 7.9915617e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371057e-05 5.8558468e-05]
+[4.5602661e-04 6.8785076e-04 2.7717147e-03 7.9915598e-03 3.4377612e-03
+ 2.6319220e-03 5.2318610e-03 3.6624395e-05 7.9371021e-05 5.8558438e-05]
+[4.5602652e-04 6.8785070e-04 2.7717156e-03 7.9915617e-03 3.4377605e-03
+ 2.6319216e-03 5.2318610e-03 3.6624384e-05 7.9371006e-05 5.8558457e-05]
+     zfnet512-9 sycl network tolerance is 1e-07
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_23668_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_23668_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_23668_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_23668_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_23668_5.cc) to share library.
+SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_5.cc) to share library.
+
+-----------efficientnet-lite4----start----------------
+[0.5488135  0.71518934 0.60276335]
+--------efficientnet-lite4-11----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   8.8974       8.8982       8.8996       8.8944       0.0022   
+               
+efficientnet-lite4-11 network opencl cost time is 0:03:18.662911 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  55.8724      55.8468      56.0938      55.6766       0.1713   
+               
+efficientnet-lite4-11 network sycl cost time is 0:03:39.294503 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.8935       5.8934       5.8937       5.8934       0.0001   
+               
+efficientnet-lite4-11 network cuda cost time is 0:03:30.866633 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.1206       3.1202       3.1224       3.1193       0.0013   
+               
+efficientnet-lite4-11 network cuda -libs=cudnn cost time is 0:03:32.305808 s
+[0.00049694 0.00053795 0.00062909 0.00055649 0.00103992 0.00145441
+ 0.00107236 0.00068009 0.00065694 0.00023782]
+[0.00049694 0.00053795 0.00062909 0.00055649 0.00103992 0.00145441
+ 0.00107236 0.00068009 0.00065694 0.00023782]
+[0.00049694 0.00053795 0.00062909 0.00055649 0.00103992 0.00145441
+ 0.00107236 0.00068009 0.00065694 0.00023782]
+[0.00049694 0.00053795 0.00062909 0.00055649 0.00103992 0.00145441
+ 0.00107236 0.00068009 0.00065694 0.00023782]
+efficientnet-lite4-11 sycl network tolerance is 1e-07
+--------efficientnet-lite4-11-qdq----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.0399       9.0402       9.0424       9.0372       0.0021   
+               
+efficientnet-lite4-11-qdq network opencl cost time is 0:11:16.523606 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  56.5653      56.5793      56.6066      56.5100       0.0407   
+               
+efficientnet-lite4-11-qdq network sycl cost time is 0:12:17.181452 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   6.2893       6.2894       6.2898       6.2885       0.0005   
+               
+efficientnet-lite4-11-qdq network cuda cost time is 0:12:04.175290 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.2902       3.2795       3.3119       3.2794       0.0153   
+               
+efficientnet-lite4-11-qdq network cuda -libs=cudnn cost time is 0:12:24.400509 s
+[0.00043126 0.00060494 0.00069571 0.00045712 0.00097915 0.00078013
+ 0.00070171 0.00064561 0.00057452 0.00029405]
+[0.00043126 0.00060494 0.00069571 0.00045712 0.00097915 0.00078013
+ 0.00070171 0.00064561 0.00057452 0.00029405]
+[0.00038433 0.00060458 0.00069528 0.00045684 0.00097855 0.00077966
+ 0.00078643 0.00064521 0.00051201 0.00029387]
+[0.00043126 0.00060494 0.00069571 0.00045712 0.00097915 0.00078013
+ 0.00070171 0.00064561 0.00057452 0.00029405]
+efficientnet-lite4-11-qdq sycl network tolerance is 1e-07
+-----------shufflenet----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------shufflenet-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7660       4.7663       4.7672       4.7644       0.0012   
+               
+   shufflenet-3 network opencl cost time is 0:07:00.194207 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.9128       7.9236       7.9823       7.8325       0.0617   
+               
+   shufflenet-3 network sycl cost time is 0:07:15.195139 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.5650       4.5631       4.5689       4.5629       0.0028   
+               
+   shufflenet-3 network cuda cost time is 0:07:01.873858 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.7794       1.7647       1.8136       1.7600       0.0242   
+               
+   shufflenet-3 network cuda -libs=cudnn cost time is 0:07:01.825046 s
+[6.4469095e-05 1.7061776e-04 5.1508378e-04 5.8121182e-04 5.0265080e-04
+ 1.1549486e-04 6.3007034e-04 1.5372723e-04 1.0675704e-04 5.8805157e-04]
+[6.4469074e-05 1.7061773e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+[6.4469059e-05 1.7061770e-04 5.1508402e-04 5.8121176e-04 5.0265086e-04
+ 1.1549488e-04 6.3007028e-04 1.5372720e-04 1.0675699e-04 5.8805139e-04]
+[6.4469081e-05 1.7061774e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+   shufflenet-3 sycl network tolerance is 1e-07
+--------shufflenet-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7655       4.7645       4.7675       4.7644       0.0014   
+               
+   shufflenet-6 network opencl cost time is 0:07:00.820258 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.8530       7.8233       7.9145       7.8213       0.0435   
+               
+   shufflenet-6 network sycl cost time is 0:07:16.164051 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.5770       4.5776       4.5778       4.5756       0.0010   
+               
+   shufflenet-6 network cuda cost time is 0:07:04.397559 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.5803       1.5461       1.6708       1.5241       0.0646   
+               
+   shufflenet-6 network cuda -libs=cudnn cost time is 0:06:57.974662 s
+[6.4469095e-05 1.7061776e-04 5.1508378e-04 5.8121182e-04 5.0265080e-04
+ 1.1549486e-04 6.3007034e-04 1.5372723e-04 1.0675704e-04 5.8805157e-04]
+[6.4469074e-05 1.7061773e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+[6.4469059e-05 1.7061770e-04 5.1508402e-04 5.8121176e-04 5.0265086e-04
+ 1.1549488e-04 6.3007028e-04 1.5372720e-04 1.0675699e-04 5.8805139e-04]
+[6.4469081e-05 1.7061774e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+   shufflenet-6 sycl network tolerance is 1e-07
+--------shufflenet-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7623       4.7628       4.7632       4.7608       0.0011   
+               
+   shufflenet-7 network opencl cost time is 0:07:02.550333 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.8881       7.8704       7.9692       7.8248       0.0603   
+               
+   shufflenet-7 network sycl cost time is 0:07:18.454123 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.5752       4.5750       4.5755       4.5750       0.0002   
+               
+   shufflenet-7 network cuda cost time is 0:07:03.884376 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.8112       1.7812       1.8894       1.7629       0.0558   
+               
+   shufflenet-7 network cuda -libs=cudnn cost time is 0:07:03.827148 s
+[6.4469095e-05 1.7061776e-04 5.1508378e-04 5.8121182e-04 5.0265080e-04
+ 1.1549486e-04 6.3007034e-04 1.5372723e-04 1.0675704e-04 5.8805157e-04]
+[6.4469074e-05 1.7061773e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+[6.4469059e-05 1.7061770e-04 5.1508402e-04 5.8121176e-04 5.0265086e-04
+ 1.1549488e-04 6.3007028e-04 1.5372720e-04 1.0675699e-04 5.8805139e-04]
+[6.4469081e-05 1.7061774e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+   shufflenet-7 sycl network tolerance is 1e-07
+--------shufflenet-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7628       4.7621       4.7648       4.7616       0.0014   
+               
+   shufflenet-8 network opencl cost time is 0:07:03.154885 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.9127       7.8832       7.9908       7.8640       0.0558   
+               
+   shufflenet-8 network sycl cost time is 0:07:19.427082 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.5671       4.5665       4.5684       4.5665       0.0009   
+               
+   shufflenet-8 network cuda cost time is 0:07:03.535939 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.8014       1.8088       1.8444       1.7510       0.0385   
+               
+   shufflenet-8 network cuda -libs=cudnn cost time is 0:07:08.135036 s
+[6.4469095e-05 1.7061776e-04 5.1508378e-04 5.8121182e-04 5.0265080e-04
+ 1.1549486e-04 6.3007034e-04 1.5372723e-04 1.0675704e-04 5.8805157e-04]
+[6.4469074e-05 1.7061773e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+[6.4469059e-05 1.7061770e-04 5.1508402e-04 5.8121176e-04 5.0265086e-04
+ 1.1549488e-04 6.3007028e-04 1.5372720e-04 1.0675699e-04 5.8805139e-04]
+[6.4469081e-05 1.7061774e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+   shufflenet-8 sycl network tolerance is 1e-07
+--------shufflenet-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   5.3700       4.7610       6.5885       4.7604       0.8616   
+               
+   shufflenet-9 network opencl cost time is 0:09:28.440111 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.8636       9.6845      10.2312       9.6752       0.2599   
+               
+   shufflenet-9 network sycl cost time is 0:10:28.231691 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.5656       4.5656       4.5657       4.5656       0.0001   
+               
+   shufflenet-9 network cuda cost time is 0:11:14.355363 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.1098       2.1286       2.1981       2.0028       0.0808   
+               
+   shufflenet-9 network cuda -libs=cudnn cost time is 0:10:50.344814 s
+[6.4469095e-05 1.7061776e-04 5.1508378e-04 5.8121182e-04 5.0265080e-04
+ 1.1549486e-04 6.3007034e-04 1.5372723e-04 1.0675704e-04 5.8805157e-04]
+[6.4469074e-05 1.7061773e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+[6.4469059e-05 1.7061770e-04 5.1508402e-04 5.8121176e-04 5.0265086e-04
+ 1.1549488e-04 6.3007028e-04 1.5372720e-04 1.0675699e-04 5.8805139e-04]
+[6.4469081e-05 1.7061774e-04 5.1508390e-04 5.8121182e-04 5.0265080e-04
+ 1.1549485e-04 6.3007028e-04 1.5372725e-04 1.0675707e-04 5.8805163e-04]
+   shufflenet-9 sycl network tolerance is 1e-07
+-----------shufflenet_2----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------shufflenet-v2-10----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.4083       1.4160       1.4203       1.3886       0.0141   
+               
+shufflenet-v2-10 network opencl cost time is 0:14:59.019573 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.4047       9.2801       9.7455       9.1883       0.2439   
+               
+shufflenet-v2-10 network sycl cost time is 0:15:00.885370 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.9495       0.9495       0.9496       0.9494       0.0000   
+               
+shufflenet-v2-10 network cuda cost time is 0:16:03.049800 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.4800       1.4825       1.5020       1.4555       0.0191   
+               
+shufflenet-v2-10 network cuda -libs=cudnn cost time is 0:15:48.555372 s
+[-1.2828691  -0.4835968  -1.1536183  -0.46577787  1.8639206   0.19239259
+  1.5042162  -1.9553295  -2.0669594  -1.6133754 ]
+[-1.2828691  -0.4835968  -1.1536183  -0.46577787  1.8639206   0.19239259
+  1.5042162  -1.9553295  -2.0669594  -1.6133754 ]
+[-1.2828691  -0.4835968  -1.1536183  -0.4657781   1.8639206   0.19239259
+  1.5042162  -1.9553295  -2.0669594  -1.6133754 ]
+[-1.2828691  -0.4835968  -1.1536183  -0.46577787  1.8639206   0.19239259
+  1.5042162  -1.9553295  -2.0669594  -1.6133754 ]
+shufflenet-v2-10 sycl network tolerance is 1e-07
+-----------squeezenet----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------squeezenet1.0-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.5555       3.5554       3.5557       3.5553       0.0002   
+               
+squeezenet1.0-3 network opencl cost time is 0:01:35.662934 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  16.4712      16.3675      16.7874      16.2587       0.2280   
+               
+squeezenet1.0-3 network sycl cost time is 0:02:01.647789 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.9007       1.9007       1.9008       1.9007       0.0001   
+               
+squeezenet1.0-3 network cuda cost time is 0:01:44.452092 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.3907       1.3013       1.5850       1.2859       0.1375   
+               
+squeezenet1.0-3 network cuda -libs=cudnn cost time is 0:01:24.817723 s
+[3.3782893e-05 2.6803773e-03 8.0530925e-05 1.0375872e-03 1.0037813e-03
+ 7.0092301e-03 3.2902129e-02 1.1766347e-06 1.6090351e-05 3.0552849e-07]
+[3.3782897e-05 2.6803778e-03 8.0530925e-05 1.0375864e-03 1.0037824e-03
+ 7.0092180e-03 3.2902136e-02 1.1766351e-06 1.6090358e-05 3.0552835e-07]
+[3.3782901e-05 2.6803780e-03 8.0530939e-05 1.0375875e-03 1.0037825e-03
+ 7.0092259e-03 3.2902107e-02 1.1766351e-06 1.6090360e-05 3.0552835e-07]
+[3.3782897e-05 2.6803778e-03 8.0530925e-05 1.0375864e-03 1.0037824e-03
+ 7.0092180e-03 3.2902136e-02 1.1766351e-06 1.6090358e-05 3.0552835e-07]
+squeezenet1.0-3 sycl network tolerance is 1e-07
+--------squeezenet1.0-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.5545       3.5546       3.5547       3.5544       0.0001   
+               
+squeezenet1.0-6 network opencl cost time is 0:01:34.786537 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  16.8330      16.6173      17.2763      16.6056       0.3134   
+               
+squeezenet1.0-6 network sycl cost time is 0:02:03.284337 s
+Evaluate inference time cost...[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_11.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_12.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_18680_5.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_13.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_17996_14.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_25649_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_25649_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_25649_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_25649_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_25649_5.cc) to share library.
+-----------resnet----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------resnet18-v1-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.2393       2.2381       2.2419       2.2379       0.0018   
+               
+  resnet18-v1-7 network opencl cost time is 0:03:08.184300 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.4167       3.4160       3.4207       3.4134       0.0030   
+               
+  resnet18-v1-7 network sycl cost time is 0:03:28.838425 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.8551       0.8551       0.8553       0.8549       0.0002   
+               
+  resnet18-v1-7 network cuda cost time is 0:04:13.571263 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.8545       0.8544       0.8546       0.8544       0.0001   
+               
+  resnet18-v1-7 network cuda -libs=cudnn cost time is 0:04:15.687296 s
+[-1.1361393  -0.5491741   0.60719675  0.74301785  1.5891836   1.8065456
+  1.8491226  -0.83441645 -1.0707475  -0.6904129 ]
+[-1.1361393  -0.5491741   0.60719675  0.74301785  1.5891836   1.8065456
+  1.8491226  -0.83441645 -1.0707475  -0.6904129 ]
+[-1.1361364  -0.5491725   0.6071988   0.74302155  1.5891896   1.8065503
+  1.8491296  -0.83441323 -1.0707462  -0.6904091 ]
+[-1.1361364  -0.5491725   0.60719866  0.7430214   1.5891894   1.8065501
+  1.8491296  -0.83441335 -1.0707462  -0.6904092 ]
+  resnet18-v1-7 sycl network tolerance is 1e-05
+--------resnet18-v2-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.2688       2.2685       2.2697       2.2682       0.0006   
+               
+  resnet18-v2-7 network opencl cost time is 0:03:22.472108 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.5880       3.5905       3.5929       3.5807       0.0053   
+               
+  resnet18-v2-7 network sycl cost time is 0:03:40.913279 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.8858       0.8858       0.8860       0.8857       0.0002   
+               
+  resnet18-v2-7 network cuda cost time is 0:04:19.307977 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   0.8847       0.8847       0.8848       0.8846       0.0001   
+               
+  resnet18-v2-7 network cuda -libs=cudnn cost time is 0:04:21.960570 s
+[-2.471708    0.29481167  0.27932823  0.5716961   1.4388707   1.1098872
+  0.54037607 -1.2510897  -0.30458692 -0.28624696]
+[-2.471708    0.29481167  0.27932823  0.5716961   1.4388707   1.1098872
+  0.54037607 -1.2510897  -0.30458692 -0.28624696]
+[-2.4717083   0.2948134   0.27932957  0.5716978   1.4388726   1.1098894
+  0.54037786 -1.2510908  -0.30458447 -0.2862472 ]
+[-2.4717083   0.2948135   0.27932954  0.5716977   1.4388726   1.1098894
+  0.54037786 -1.2510908  -0.30458453 -0.28624722]
+  resnet18-v2-7 sycl network tolerance is 1e-05
+--------resnet34-v1-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.3115       4.3114       4.3123       4.3106       0.0007   
+               
+  resnet34-v1-7 network opencl cost time is 0:05:16.856101 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   6.0222       6.0188       6.0317       6.0160       0.0069   
+               
+  resnet34-v1-7 network sycl cost time is 0:05:50.651626 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.4575       1.4575       1.4576       1.4574       0.0001   
+               
+  resnet34-v1-7 network cuda cost time is 0:07:20.100878 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.4595       1.4595       1.4596       1.4593       0.0001   
+               
+  resnet34-v1-7 network cuda -libs=cudnn cost time is 0:07:25.340020 s
+[-2.5078092   0.5589927   1.3547897   1.5757015   2.1012337   0.67331254
+  1.7828811  -1.0704494  -1.1124264  -0.2514754 ]
+[-2.5078092   0.5589927   1.3547897   1.5757015   2.1012337   0.67331254
+  1.7828811  -1.0704494  -1.1124264  -0.2514754 ]
+[-2.5078092   0.55899405  1.3547899   1.5757002   2.1012337   0.6733122
+  1.7828804  -1.0704472  -1.112425   -0.25147298]
+[-2.5078092   0.55899405  1.3547899   1.5757002   2.101234    0.6733122
+  1.7828805  -1.0704472  -1.112425   -0.25147298]
+  resnet34-v1-7 sycl network tolerance is 1e-05
+--------resnet34-v2-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.3724       4.3721       4.3736       4.3716       0.0009   
+               
+  resnet34-v2-7 network opencl cost time is 0:05:47.615461 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   6.3277       6.3147       6.3550       6.3136       0.0193   
+               
+  resnet34-v2-7 network sycl cost time is 0:06:12.987482 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.5106       1.5107       1.5108       1.5104       0.0002   
+               
+  resnet34-v2-7 network cuda cost time is 0:07:40.724009 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   1.5112       1.5111       1.5114       1.5110       0.0002   
+               
+  resnet34-v2-7 network cuda -libs=cudnn cost time is 0:07:48.463507 s
+[-1.4225725   0.7355762  -0.28274542 -0.09265328  0.9340066   1.1718173
+  0.9921663  -0.09609493 -1.199944   -0.05458255]
+[-1.4225725   0.7355762  -0.28274542 -0.09265328  0.9340066   1.1718173
+  0.9921663  -0.09609493 -1.199944   -0.05458255]
+[-1.4225724   0.73557544 -0.28274578 -0.09265491  0.9340046   1.171814
+  0.9921645  -0.09609561 -1.1999447  -0.05458339]
+[-1.4225725   0.73557544 -0.28274566 -0.09265497  0.9340046   1.171814
+  0.99216443 -0.09609554 -1.1999446  -0.05458345]
+  resnet34-v2-7 sycl network tolerance is 1e-05
+--------resnet50-v1-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.4639       4.4637       4.4662       4.4618       0.0018   
+               
+  resnet50-v1-7 network opencl cost time is 0:08:57.770596 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   6.1914       6.1886       6.2133       6.1724       0.0168   
+               
+  resnet50-v1-7 network sycl cost time is 0:09:27.520075 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.5707       2.5706       2.5710       2.5705       0.0002   
+               
+  resnet50-v1-7 network cuda cost time is 0:09:58.601234 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   2.5729       2.5729       2.5730       2.5727       0.0001   
+               
+  resnet50-v1-7 network cuda -libs=cudnn cost time is 0:10:01.908012 s
+[-1.5783374   0.427221    0.73162705  0.7999209   1.4935124   0.78782773
+  0.6576413  -0.666458   -1.9106336  -0.71379167]
+[-1.5783374   0.427221    0.73162705  0.7999209   1.4935124   0.78782773
+  0.6576413  -0.666458   -1.9106336  -0.71379167]
+[-1.5783372   0.42722267  0.73162675  0.79992104  1.493513    0.78782856
+  0.6576414  -0.6664587  -1.9106336  -0.71379286]
+[-1.5783372   0.42722264  0.73162663  0.799921    1.493513    0.7878287
+  0.6576415  -0.66645867 -1.9106336  -0.7137929 ][SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_25649_6.cc) to share library.
+
+  resnet50-v1-7 sycl network tolerance is 1e-05
+--------resnet50-v2-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7622       4.7621       4.7630       4.7616       0.0006   
+               
+  resnet50-v2-7 network opencl cost time is 0:08:12.521670 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  25.6354      25.6446      25.6449      25.6166       0.0133   
+               
+  resnet50-v2-7 network sycl cost time is 0:08:35.916094 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6726       3.6725       3.6727       3.6724       0.0001   
+               
+  resnet50-v2-7 network cuda cost time is 0:09:05.505446 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6721       3.6722       3.6724       3.6717       0.0003   
+               
+  resnet50-v2-7 network cuda -libs=cudnn cost time is 0:09:10.124307 s
+[-1.1246811   0.28489724  2.2170246   0.6785773   0.8802425  -0.12301307
+  0.4638437  -1.0594972  -0.9392422  -0.79738575]
+[-1.1246811   0.28489724  2.2170246   0.6785773   0.8802425  -0.12301307
+  0.4638437  -1.0594972  -0.9392422  -0.79738575]
+[-1.12468     0.2848972   2.217025    0.67857814  0.88024265 -0.12301348
+  0.46384373 -1.0594966  -0.9392418  -0.7973859 ]
+[-1.1246808   0.2848977   2.2170253   0.6785788   0.8802431  -0.12301325
+  0.46384406 -1.0594971  -0.93924195 -0.7973868 ]
+  resnet50-v2-7 sycl network tolerance is 1e-05
+
+--------resnet101-v1-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   8.3528       8.3526       8.3562       8.3497       0.0026   
+               
+ resnet101-v1-7 network opencl cost time is 0:14:47.679036 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  10.3637      10.3625      10.3730      10.3555       0.0072   
+               
+ resnet101-v1-7 network sycl cost time is 0:15:06.195263 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.9473       4.9447       4.9529       4.9444       0.0039   
+               
+ resnet101-v1-7 network cuda cost time is 0:16:17.939121 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.9436       4.9437       4.9438       4.9432       0.0003   
+               
+ resnet101-v1-7 network cuda -libs=cudnn cost time is 0:16:25.900488 s
+[-2.6054533   0.58673894  1.569218    0.3403387   0.79542357 -1.2014211
+  0.08631041 -1.180254   -2.0062635   0.10179627]
+[-2.6054533   0.58673894  1.569218    0.3403387   0.79542357 -1.2014211
+  0.08631041 -1.180254   -2.0062635   0.10179627]
+[-2.6054533   0.5867392   1.5692185   0.34033903  0.79542464 -1.2014205
+  0.08631096 -1.1802546  -2.0062633   0.10179475]
+[-2.6054533   0.5867392   1.5692185   0.34033895  0.7954247  -1.2014205
+  0.08631105 -1.1802546  -2.0062633   0.10179481]
+ resnet101-v1-7 sycl network tolerance is 1e-05
+--------resnet101-v2-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   8.7476       8.7479       8.7502       8.7446       0.0023   
+               
+ resnet101-v2-7 network opencl cost time is 0:13:23.672663 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  30.3071      30.2807      30.3942      30.2462       0.0632   
+               
+ resnet101-v2-7 network sycl cost time is 0:13:48.543004 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   6.0646       6.0645       6.0653       6.0640       0.0005   
+               
+ resnet101-v2-7 network cuda cost time is 0:14:46.123206 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   6.0660       6.0659       6.0662       6.0659       0.0001   
+               
+ resnet101-v2-7 network cuda -libs=cudnn cost time is 0:14:51.319900 s
+[-2.564035    0.41247755  1.4981437   0.66279346  1.0895928  -1.2358838
+  0.2781019  -0.65732867 -2.155926   -1.0975796 ]
+[-2.564035    0.41247755  1.4981437   0.66279346  1.0895928  -1.2358838
+  0.2781019  -0.65732867 -2.155926   -1.0975796 ]
+[-2.5640354   0.41247693  1.498142    0.66279215  1.0895905  -1.2358836
+  0.27810127 -0.65732884 -2.1559255  -1.0975786 ]
+[-2.5640357   0.41247737  1.4981422   0.66279244  1.0895913  -1.2358838
+  0.27810147 -0.6573289  -2.1559262  -1.0975791 ]
+ resnet101-v2-7 sycl network tolerance is 1e-05
+--------resnet152-v1-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  12.0555      12.0551      12.0598      12.0517       0.0033   
+               
+ resnet152-v1-7 network opencl cost time is 0:21:56.219019 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  14.8030      14.8041      14.8054      14.7994       0.0026   
+               
+ resnet152-v1-7 network sycl cost time is 0:22:27.884511 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.2119       7.2116       7.2138       7.2104       0.0014   
+               
+ resnet152-v1-7 network cuda cost time is 0:24:25.335925 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   7.2122       7.2107       7.2171       7.2088       0.0036   
+               
+ resnet152-v1-7 network cuda -libs=cudnn cost time is 0:24:22.172973 s
+[-0.8672406   0.42938638  0.9039946   0.46840757  0.67552084 -0.17276473
+  0.3356038  -0.6338906  -0.7774418  -0.66338   ]
+[-0.8672406   0.42938638  0.9039946   0.46840757  0.67552084 -0.17276473
+  0.3356038  -0.6338906  -0.7774418  -0.66338   ]
+[-0.8672375   0.42938572  0.90399647  0.46841067  0.6755231  -0.1727633
+  0.33560476 -0.6338918  -0.7774438  -0.663383  ]
+[-0.8672375   0.42938572  0.90399647  0.46841055  0.6755231  -0.17276339
+  0.33560476 -0.6338918  -0.7774438  -0.663383  ]
+ resnet152-v1-7 sycl network tolerance is 1e-05
+--------resnet152-v2-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  12.5531      12.5541      12.5545      12.5508       0.0017   
+               
+ resnet152-v2-7 network opencl cost time is 0:18:43.954162 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  35.1106      35.1073      35.1206      35.1039       0.0072   
+               
+ resnet152-v2-7 network sycl cost time is 0:19:04.539557 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   8.3863       8.3863       8.3864       8.3861       0.0001   
+               
+ resnet152-v2-7 network cuda cost time is 0:20:42.142375 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   8.3882       8.3881       8.3888       8.3876       0.0005   
+               
+ resnet152-v2-7 network cuda -libs=cudnn cost time is 0:20:43.977979 s
+[-2.1426046  -0.09874829  1.7424865   0.9047311   0.97416294 -1.6056798
+ -0.9597663  -1.4407542  -2.003972   -0.79893893]
+[-2.1426046  -0.09874829  1.7424865   0.9047311   0.97416294 -1.6056798
+ -0.9597663  -1.4407542  -2.003972   -0.79893893]
+[-2.1426036  -0.09874841  1.7424862   0.9047312   0.9741625  -1.6056786
+ -0.9597655  -1.4407538  -2.0039723  -0.7989385 ]
+[-2.1426044  -0.09874871  1.7424861   0.90473115  0.9741625  -1.605679
+ -0.9597653  -1.4407535  -2.003972   -0.79893756]
+ resnet152-v2-7 sycl network tolerance is 1e-05
+
+-----------resnet50-caffe2----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------resnet50-caffe2-v1-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7535       4.7536       4.7550       4.7521       0.0012   
+               
+resnet50-caffe2-v1-3 network opencl cost time is 0:06:52.632745 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  25.4777      25.4410      25.5518      25.4403       0.0524   
+               
+resnet50-caffe2-v1-3 network sycl cost time is 0:07:20.224107 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6080       3.6076       3.6094       3.6071       0.0010   
+               
+resnet50-caffe2-v1-3 network cuda cost time is 0:07:34.471715 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6073       3.6073       3.6075       3.6071       0.0002   
+               
+resnet50-caffe2-v1-3 network cuda -libs=cudnn cost time is 0:07:42.007896 s
+[1.9005880e-05 4.6433051e-04 5.0208136e-04 1.0473937e-03 5.6837400e-04
+ 2.8603023e-05 5.5614382e-04 1.6243724e-04 1.8477094e-04 1.2262216e-04]
+[1.9005873e-05 4.6433043e-04 5.0208124e-04 1.0473937e-03 5.6837406e-04
+ 2.8603023e-05 5.5614382e-04 1.6243721e-04 1.8477092e-04 1.2262216e-04]
+[1.9005849e-05 4.6433031e-04 5.0208112e-04 1.0473944e-03 5.6837359e-04
+ 2.8602999e-05 5.5614335e-04 1.6243722e-04 1.8477104e-04 1.2262214e-04]
+[1.9005856e-05 4.6433025e-04 5.0208106e-04 1.0473941e-03 5.6837359e-04
+ 2.8602997e-05 5.5614306e-04 1.6243731e-04 1.8477102e-04 1.2262214e-04]
+resnet50-caffe2-v1-3 sycl network tolerance is 1e-07
+--------resnet50-caffe2-v1-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7564       4.7559       4.7577       4.7557       0.0009   
+               
+resnet50-caffe2-v1-6 network opencl cost time is 0:06:48.459114 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  25.3586      25.3431      25.3900      25.3427       0.0222   
+               
+resnet50-caffe2-v1-6 network sycl cost time is 0:07:14.629642 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6160       3.6159       3.6161       3.6159       0.0001   
+               
+resnet50-caffe2-v1-6 network cuda cost time is 0:07:35.555078 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6085       3.6085       3.6088       3.6081       0.0003   
+               
+resnet50-caffe2-v1-6 network cuda -libs=cudnn cost time is 0:07:34.964790 s
+[1.9005880e-05 4.6433051e-04 5.0208136e-04 1.0473937e-03 5.6837400e-04
+ 2.8603023e-05 5.5614382e-04 1.6243724e-04 1.8477094e-04 1.2262216e-04]
+[1.9005873e-05 4.6433043e-04 5.0208124e-04 1.0473937e-03 5.6837406e-04
+ 2.8603023e-05 5.5614382e-04 1.6243721e-04 1.8477092e-04 1.2262216e-04]
+[1.9005849e-05 4.6433031e-04 5.0208112e-04 1.0473944e-03 5.6837359e-04
+ 2.8602999e-05 5.5614335e-04 1.6243722e-04 1.8477104e-04 1.2262214e-04]
+[1.9005856e-05 4.6433025e-04 5.0208106e-04 1.0473941e-03 5.6837359e-04
+ 2.8602997e-05 5.5614306e-04 1.6243731e-04 1.8477102e-04 1.2262214e-04]
+resnet50-caffe2-v1-6 sycl network tolerance is 1e-07
+--------resnet50-caffe2-v1-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7571       4.7570       4.7584       4.7558       0.0011   
+               
+resnet50-caffe2-v1-7 network opencl cost time is 0:06:49.199205 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  25.4131      25.4077      25.4596      25.3720       0.0359   
+               
+resnet50-caffe2-v1-7 network sycl cost time is 0:07:11.692099 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6152       3.6153       3.6154       3.6149       0.0002   
+               
+resnet50-caffe2-v1-7 network cuda cost time is 0:07:40.182298 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6109       3.6113       3.6118       3.6094       0.0011   
+               
+resnet50-caffe2-v1-7 network cuda -libs=cudnn cost time is 0:07:41.099475 s
+[1.9005880e-05 4.6433051e-04 5.0208136e-04 1.0473937e-03 5.6837400e-04
+ 2.8603023e-05 5.5614382e-04 1.6243724e-04 1.8477094e-04 1.2262216e-04]
+[1.9005873e-05 4.6433043e-04 5.0208124e-04 1.0473937e-03 5.6837406e-04
+ 2.8603023e-05 5.5614382e-04 1.6243721e-04 1.8477092e-04 1.2262216e-04]
+[1.9005849e-05 4.6433031e-04 5.0208112e-04 1.0473944e-03 5.6837359e-04
+ 2.8602999e-05 5.5614335e-04 1.6243722e-04 1.8477104e-04 1.2262214e-04]
+[1.9005856e-05 4.6433025e-04 5.0208106e-04 1.0473941e-03 5.6837359e-04
+ 2.8602997e-05 5.5614306e-04 1.6243731e-04 1.8477102e-04 1.2262214e-04]
+resnet50-caffe2-v1-7 sycl network tolerance is 1e-07
+--------resnet50-caffe2-v1-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7575       4.7578       4.7582       4.7565       0.0007   
+               
+resnet50-caffe2-v1-8 network opencl cost time is 0:06:48.495401 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  25.4529      25.4284      25.5599      25.3703       0.0793   
+               
+resnet50-caffe2-v1-8 network sycl cost time is 0:07:11.674377 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6150       3.6144       3.6169       3.6137       0.0014   
+               
+resnet50-caffe2-v1-8 network cuda cost time is 0:07:38.084270 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6058       3.6059       3.6060       3.6056       0.0002   
+               
+resnet50-caffe2-v1-8 network cuda -libs=cudnn cost time is 0:07:37.001990 s
+[1.9005880e-05 4.6433051e-04 5.0208136e-04 1.0473937e-03 5.6837400e-04
+ 2.8603023e-05 5.5614382e-04 1.6243724e-04 1.8477094e-04 1.2262216e-04]
+[1.9005873e-05 4.6433043e-04 5.0208124e-04 1.0473937e-03 5.6837406e-04
+ 2.8603023e-05 5.5614382e-04 1.6243721e-04 1.8477092e-04 1.2262216e-04]
+[1.9005849e-05 4.6433031e-04 5.0208112e-04 1.0473944e-03 5.6837359e-04
+ 2.8602999e-05 5.5614335e-04 1.6243722e-04 1.8477104e-04 1.2262214e-04]
+[1.9005856e-05 4.6433025e-04 5.0208106e-04 1.0473941e-03 5.6837359e-04
+ 2.8602997e-05 5.5614306e-04 1.6243731e-04 1.8477102e-04 1.2262214e-04]
+resnet50-caffe2-v1-8 sycl network tolerance is 1e-07
+--------resnet50-caffe2-v1-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   4.7547       4.7548       4.7558       4.7536       0.0009   
+               
+resnet50-caffe2-v1-9 network opencl cost time is 0:06:51.282112 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  25.4100      25.3710      25.4977      25.3613       0.0622   
+               
+resnet50-caffe2-v1-9 network sycl cost time is 0:07:09.653234 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6173       3.6172       3.6175       3.6171       0.0001   
+               
+resnet50-caffe2-v1-9 network cuda cost time is 0:07:32.005908 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.6070       3.6069       3.6071       3.6069       0.0001   
+               
+resnet50-caffe2-v1-9 network cuda -libs=cudnn cost time is 0:07:39.098828 s
+[1.9005880e-05 4.6433051e-04 5.0208136e-04 1.0473937e-03 5.6837400e-04
+ 2.8603023e-05 5.5614382e-04 1.6243724e-04 1.8477094e-04 1.2262216e-04]
+[1.9005873e-05 4.6433043e-04 5.0208124e-04 1.0473937e-03 5.6837406e-04
+ 2.8603023e-05 5.5614382e-04 1.6243721e-04 1.8477092e-04 1.2262216e-04]
+[1.9005849e-05 4.6433031e-04 5.0208112e-04 1.0473944e-03 5.6837359e-04
+ 2.8602999e-05 5.5614335e-04 1.6243722e-04 1.8477104e-04 1.2262214e-04]
+[1.9005856e-05 4.6433025e-04 5.0208106e-04 1.0473941e-03 5.6837359e-04
+ 2.8602997e-05 5.5614306e-04 1.6243731e-04 1.8477102e-04 1.2262214e-04]
+resnet50-caffe2-v1-9 sycl network tolerance is 1e-07[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_932_1.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_932_2.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_932_3.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_932_4.cc) to share library.
+[SYCL] Compile kernels source code(/tmp/tvm_sycl/sycl_932_5.cc) to share library.
+-----------densenet-121----start----------------
+[0.5488135  0.71518934 0.60276335 0.5448832  0.4236548  0.6458941
+ 0.4375872  0.891773   0.96366274 0.3834415 ]
+--------densenet-3----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.5481       9.5470       9.5525       9.5449       0.0032   
+               
+     densenet-3 network opencl cost time is 0:40:29.803453 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  91.2713      90.7961      92.2421      90.7758       0.6865   
+               
+     densenet-3 network sycl cost time is 0:41:25.945715 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.4465       3.4437       3.4528       3.4431       0.0044   
+               
+     densenet-3 network cuda cost time is 0:45:27.054829 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.3601       3.3602       3.3602       3.3598       0.0002   
+               
+     densenet-3 network cuda -libs=cudnn cost time is 0:35:42.433891 s
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685389  -0.9432772  -0.19122788 -1.0763167   0.49219382 -0.98895097
+  0.06353939  0.03084485 -1.4716768   0.47090277]
+[-1.1685396  -0.9432787  -0.19122696 -1.0763158   0.4921941  -0.98895067
+  0.06353974  0.03084508 -1.4716766   0.47090307]
+     densenet-3 sycl network tolerance is 1e-05
+--------densenet-6----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.5521       9.5515       9.5546       9.5503       0.0018   
+               
+     densenet-6 network opencl cost time is 0:22:09.042590 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  90.7925      90.7440      90.9331      90.7005       0.1010   
+               
+     densenet-6 network sycl cost time is 0:23:02.999931 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.4352       3.4352       3.4356       3.4347       0.0004   
+               
+     densenet-6 network cuda cost time is 0:25:03.688485 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.3612       3.3611       3.3614       3.3610       0.0002   
+               
+     densenet-6 network cuda -libs=cudnn cost time is 0:25:07.087816 s
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685389  -0.9432772  -0.19122788 -1.0763167   0.49219382 -0.98895097
+  0.06353939  0.03084485 -1.4716768   0.47090277]
+[-1.1685396  -0.9432787  -0.19122696 -1.0763158   0.4921941  -0.98895067
+  0.06353974  0.03084508 -1.4716766   0.47090307]
+     densenet-6 sycl network tolerance is 1e-05
+--------densenet-7----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.5546       9.5546       9.5559       9.5533       0.0011   
+               
+     densenet-7 network opencl cost time is 0:22:08.822907 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  90.8888      90.7747      91.1788      90.7128       0.2066   
+               
+     densenet-7 network sycl cost time is 0:23:06.382989 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.4362       3.4363       3.4363       3.4361       0.0001   
+               
+     densenet-7 network cuda cost time is 0:24:55.516037 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.3656       3.3655       3.3657       3.3655       0.0001   
+               
+     densenet-7 network cuda -libs=cudnn cost time is 0:25:51.288157 s
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685389  -0.9432772  -0.19122788 -1.0763167   0.49219382 -0.98895097
+  0.06353939  0.03084485 -1.4716768   0.47090277]
+[-1.1685396  -0.9432787  -0.19122696 -1.0763158   0.4921941  -0.98895067
+  0.06353974  0.03084508 -1.4716766   0.47090307]
+     densenet-7 sycl network tolerance is 1e-05
+--------densenet-8----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.5461       9.5460       9.5484       9.5439       0.0018   
+               
+     densenet-8 network opencl cost time is 0:22:58.645185 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  91.0996      90.9960      91.4171      90.8859       0.2289   
+               
+     densenet-8 network sycl cost time is 0:24:43.687124 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.4415       3.4414       3.4417       3.4414       0.0002   
+               
+     densenet-8 network cuda cost time is 0:26:50.305678 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.3652       3.3652       3.3653       3.3650       0.0001   
+               
+     densenet-8 network cuda -libs=cudnn cost time is 0:26:57.961720 s
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685389  -0.9432772  -0.19122788 -1.0763167   0.49219382 -0.98895097
+  0.06353939  0.03084485 -1.4716768   0.47090277]
+[-1.1685396  -0.9432787  -0.19122696 -1.0763158   0.4921941  -0.98895067
+  0.06353974  0.03084508 -1.4716766   0.47090307]
+     densenet-8 sycl network tolerance is 1e-05
+--------densenet-9----start-------------
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   9.5179       9.5166       9.5215       9.5154       0.0026   
+               
+     densenet-9 network opencl cost time is 0:24:01.842726 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+  91.7887      91.3105      92.9394      91.1162       0.8175   
+               
+     densenet-9 network sycl cost time is 0:24:31.277507 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.4436       3.4379       3.4552       3.4376       0.0082   
+               
+     densenet-9 network cuda cost time is 0:27:03.695807 s
+Evaluate inference time cost...
+Execution time summary:
+ mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)  
+   3.3672       3.3670       3.3679       3.3667       0.0005   
+               
+     densenet-9 network cuda -libs=cudnn cost time is 0:26:54.666065 s
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685395  -0.9432778  -0.19122843 -1.0763167   0.4921926  -0.9889515
+  0.06353887  0.03084496 -1.4716756   0.47090137]
+[-1.1685389  -0.9432772  -0.19122788 -1.0763167   0.49219382 -0.98895097
+  0.06353939  0.03084485 -1.4716768   0.47090277]
+[-1.1685396  -0.9432787  -0.19122696 -1.0763158   0.4921941  -0.98895067
+  0.06353974  0.03084508 -1.4716766   0.47090307]
+     densenet-9 sycl network tolerance is 1e-05
