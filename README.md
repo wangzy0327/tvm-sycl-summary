@@ -39,7 +39,7 @@ AMD Radeon 测试日志 [详见](tvm-amd-MI50-sycl-test-result/error_tvm_MI50_ro
 | shufflenet   | √           | √                                                            | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 | squeezenet   | √           | √                                                            | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 | vgg          | √           | √(vgg19-caffe2-6 ×)                                          | √             | <font color=green>**√（vgg16-bn-7 ×）** </font>              | √（vgg16-bn-7 ×）(vgg19-caffe2-6 ×)               | √          | ×          | √（same as above） | √            | √                  | √            |
-| zfnet        | √           | √                                                            | √             | <font color=green>**todo** </font>                           | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
+| zfnet        | √           | √                                                            | √             | <font color=green>**√** </font>                              | √                                                 | √          | ×          | √（same as above） | √            | √                  | √            |
 
 tvm-sycl开发测试过程中遇到的bug
 
