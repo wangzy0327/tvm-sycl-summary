@@ -2,7 +2,7 @@
 
 ### 概述
 
-TVM中添加SYCL设备代码支持，相关tvm-sycl代码详见https://github.com/RELOAD22/tvm的sycl分支
+TVM中添加SYCL设备代码支持，相关tvm-sycl代码详见https://github.com/RELOAD22/tvm 的sycl分支
 
 依赖sycl分支详见 http://10.18.127.29:8888/wangziyang/intel-llvm-new 的v2022-12-local-deps分支
 
@@ -14,7 +14,7 @@ TVM中添加SYCL设备代码支持，相关tvm-sycl代码详见https://github.co
 
 以下的测试的tvm版本为v.0.10 Release，cuda版本为11.2，hip版本为5.2，hygon版本为5.2，SYCL版本为2022-09-release
 
-cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，oneapi-LevelZero平台下测试设备为Intel DKMS i915，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
+cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，oneapi-LevelZero平台下测试设备为Intel Arctic Sound-P 300W，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
 
 Nvidia Tesla V100 测试统计结果 [详见](tvm-cuda-V100-sycl-test-result/cuda-V100-network-summary-new.xlsx)
 
@@ -67,11 +67,12 @@ cuda平台下测试设备为Tesla V100-32GB
 
 目前测试遇到的问题
 
-| network  | platform  | bug                                                          | progress              |
-| -------- | --------- | ------------------------------------------------------------ | --------------------- |
-| mnist-1  | sycl/cuda | compute number accuracy                                      | undo(2022-12-release) |
-| any      | sycl/cuda | PI CUDA ERROR 700 an illegal memory access was encountered(sycl/plugins/cuda/pi_cuda.cpp) | undo                  |
-| google-3 | sycl/hip  | Memory access fault by GPU node-2 (Agent handle: 0x56534ffb3250) on address 0x7facb0600000. Reason: Page not present or supervisor privilege. | undo                  |
+| network  | platform  | bug                                                          | progress                                    |
+| -------- | --------- | ------------------------------------------------------------ | ------------------------------------------- |
+| any      | rocm      | ROCM HIP：invalid device ordinal                             | <font color=green>fix(ROCMDeviceAPI)</font> |
+| mnist-1  | sycl/cuda | compute number accuracy                                      | undo(2022-12-release)                       |
+| any      | sycl/cuda | PI CUDA ERROR 700 an illegal memory access was encountered(sycl/plugins/cuda/pi_cuda.cpp) | undo                                        |
+| google-3 | sycl/hip  | Memory access fault by GPU node-2 (Agent handle: 0x56534ffb3250) on address 0x7facb0600000. Reason: Page not present or supervisor privilege. | undo                                        |
 
 ##### bug-1
 
@@ -194,5 +195,64 @@ RUN export CMAKE_ARGS=-DONNX_USE_PROTOBUF_SHARED_LIBS=ON
 RUN pip3 install jupyter transformers antlr4-python3-runtime graphviz onnx pillow
 RUN pip3 install tensorflow
 WORKDIR /src/rocm-tvm
+```
+
+**bug-7**
+
+TVMError: LLVM module verification failed with the following errors: 
+
+```shell
+14.tvm/python/tvm/relay/build_module.py lib = relay.build(mod, target=target, params=params)
+13.tvm/python/tvm/relay/build_module.py graph_json, runtime_mod, params = bld_mod.build(mod=ir_mod,
+            target=raw_targets,
+            params=params,
+            executor=executor,
+            runtime=runtime,
+            workspace_memory_pools=workspace_memory_pools,
+            constant_memory_pools=constant_memory_pools,
+            mod_name=mod_name,
+        )
+12.tvm/python/tvm/relay/build_module.py class BuildModule self._build()
+11.tvm/python/tvm/_ffi/_ctypes/packed_func.py PackedFuncBase::__call__()
+10.src/relay/backend/build_module.cc {} tvm {} relay {} PackedFunc RelayBuildModule::GetFunction(const String& name, const ObjectPtr<Object>& sptr_to_self){}
+9.src/relay/backend/build_module.cc {} tvm {} relay {} void RelayBuildModule:: Build(IRModule mod, const Array<Target>& raw_targets, const tvm::Target& target_host,
+             const Executor& executor, const Runtime& runtime,
+             const WorkspaceMemoryPools& workspace_memory_pools,
+             const ConstantMemoryPools& constant_memory_pools, const String mod_name)
+8.src/relay/backend/build_module.cc {} tvm {} relay {} backend  void RelayBuildModule::BuildRelay(IRModule relay_module, const String& mod_name) {}
+7.src/driver/driver_api.cc {} tvm runtime::Module TIRToRuntime(const Map<Target, IRModule>& inputs_arg,const Target& target_host_arg) {}
+6.src/target/codegen.cc {} tvm {} codegen Build(IRModule,Target)
+5.include/tvm/runtime/packed_func.h {} tvm {} runtime template <typename R, typename... Args> template <typename FType>
+inline void TypedPackedFunc<R(Args...)>::AssignTypedLambda(FType flambda, std::string name){}
+4.src/target/llvm/codegen_amdgpu.cc {} tvm {} codegen BuildAMDGPU(IRModule,Target) / 3.src/target/opt/build_cuda_on.cc {} tvm {} codegen BuildCUDA(IRModule,Target)
+2.src/target/llvm/codegen_llvm.cc {} tvm {} codegen CodeGenLLVM::Finish()
+1.src/target/llvm/codegen_llvm.cc {} tvm {} codegen CodeGenLLVM::Verify() const
+```
+
+
+
+```
+    raise get_last_ffi_error()
+tvm._ffi.base.TVMError: Traceback (most recent call last):
+  11: TVMFuncCall
+  10: tvm::relay::backend::RelayBuildModule::GetFunction(tvm::runtime::String const&, tvm::runtime::ObjectPtr<tvm::runtime::Object> const&)::{lambda(tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*)#3}::operator()(tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*) const
+  9: tvm::relay::backend::RelayBuildModule::Build(tvm::IRModule, tvm::runtime::Array<tvm::Target, void> const&, tvm::Target const&, tvm::relay::Executor const&, tvm::relay::Runtime const&, tvm::WorkspaceMemoryPools const&, tvm::ConstantMemoryPools const&, tvm::runtime::String)
+  8: tvm::relay::backend::RelayBuildModule::BuildRelay(tvm::IRModule, tvm::runtime::String const&)
+  7: tvm::TIRToRuntime(tvm::runtime::Map<tvm::Target, tvm::IRModule, void, void> const&, tvm::Target const&)
+  6: tvm::codegen::Build(tvm::IRModule, tvm::Target)
+  5: _ZN3tvm7runtime13Pac
+  4: tvm::runtime::TypedPackedFunc<tvm::runtime::Module (tvm::IRModule, tvm::Target)>::AssignTypedLambda<tvm::runtime::Module (*)(tvm::IRModule, tvm::Target)>(tvm::runtime::Module (*)(tvm::IRModule, tvm::Target), std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)::{lambda(tvm::runtime::TVMArgs const&, tvm::runtime::TVMRetValue*)#1}::operator()(tvm::runtime::TVMArgs const&, tvm::runtime::TVMRetValue*) const
+  3: tvm::codegen::BuildAMDGPU(tvm::IRModule, tvm::Target)
+  2: tvm::codegen::CodeGenLLVM::Finish()
+  1: tvm::codegen::CodeGenLLVM::Verify() const
+  0: _ZN3tvm7runtime6detail
+  File "/home/wzy/native-tvm/tvm/src/target/llvm/codegen_llvm.cc", line 354
+  
+TVMError: LLVM module verification failed with the following errors: 
+Calling convention requires void return type
+i32 (float addrspace(1)*, float addrspace(1)*, float addrspace(1)*, float addrspace(1)*)* @tvmgen_default_fused_nn_conv2d_add_nn_relu_1_kernel
+Function return type does not match operand type of return inst!
+  ret void
+ i32Calling convention requires void return type  
 ```
 

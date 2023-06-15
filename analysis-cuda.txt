@@ -1,0 +1,116 @@
+cuda
+
+NVTX Push-Pop Range Statistics:
+
+ Time(%)  Total Time (ns)  Instances      Average         Minimum        Maximum              Range          
+ -------  ---------------  ---------  ---------------  -------------  -------------  ------------------------
+    99.7    3,498,803,745          1  3,498,803,745.0  3,498,803,745  3,498,803,745  Load Module             
+     0.2        7,365,201          1      7,365,201.0      7,365,201      7,365,201  Module running          
+     0.1        3,134,913          1      3,134,913.0      3,134,913      3,134,913  Init random data        
+     0.0          602,422          1        602,422.0        602,422        602,422  Set input data to module
+
+
+sycl
+
+NVTX Push-Pop Range Statistics:
+
+ Time(%)  Total Time (ns)  Instances      Average          Minimum         Maximum               Range          
+ -------  ---------------  ---------  ----------------  --------------  --------------  ------------------------
+    96.4   23,833,423,995          1  23,833,423,995.0  23,833,423,995  23,833,423,995  Module running          
+     3.5      875,001,997          1     875,001,997.0     875,001,997     875,001,997  Load Module             
+     0.0        2,453,924          1       2,453,924.0       2,453,924       2,453,924  Init random data        
+     0.0          417,135          1         417,135.0         417,135         417,135  Set input data to module
+
+
+cudnn
+
+NVTX Push-Pop Range Statistics:
+
+ Time(%)  Total Time (ns)  Instances      Average         Minimum        Maximum              Range          
+ -------  ---------------  ---------  ---------------  -------------  -------------  ------------------------
+    99.7    3,299,531,538          1  3,299,531,538.0  3,299,531,538  3,299,531,538  Load Module             
+     0.2        7,083,201          1      7,083,201.0      7,083,201      7,083,201  Module running          
+     0.1        2,538,749          1      2,538,749.0      2,538,749      2,538,749  Init random data        
+     0.0          684,004          1        684,004.0        684,004        684,004  Set input data to module
+
+
+
+opencl
+
+
+NVTX Push-Pop Range Statistics:
+
+ Time(%)  Total Time (ns)  Instances     Average       Minimum      Maximum             Range          
+ -------  ---------------  ---------  -------------  -----------  -----------  ------------------------
+    96.8      649,673,094          1  649,673,094.0  649,673,094  649,673,094  Load Module             
+     2.7       18,353,139          1   18,353,139.0   18,353,139   18,353,139  Module running          
+     0.4        2,493,953          1    2,493,953.0    2,493,953    2,493,953  Init random data        
+     0.1          438,163          1      438,163.0      438,163      438,163  Set input data to module
+
+
+resnet101-v1-7-cuda.qdrep
+
+fopen(libc.so )
+
+ioctl(libc.so libcuda.so libcudart.so)
+
+fork(libpthread)
+
+read(libpthread)
+
+pthread join
+
+pthread create
+
+mmap
+
+
+
+                             Load Module
+
+     cudaMalloc |  cudaMemGetInfo |  cudaMemcpy
+
+CUDA HW                                                                        kernel running (6.318 ms)
+NVTX          Load Module(3.499s) | Set input data to module(602.422 us) |    Module running(7.365ms)
+CUDA API  cudaStreamSynchronized       cudaMemcpy |cudaMemGetInfo         cuModuleLoadData  cudaMemGetInfo cudaMalloc cudaMemcpy cuFree  cuModuleUnload
+
+
+
+
+
+resnet101-v1-7-sycl.qdrep
+
+fopen(libc.so)
+ioctl(libc.so  libcuda.so(cuCtxCreate_v2) libpi_cuda.so(cuda_piContextCreate) libpi_sycl.so(sycl::_V1::detail::context_impl::context_impl(...)))
+
+popen(libc.so)
+fgets(libc.so)
+
+
+
+                            Load Module
+      cuCtxCreate  | cuMemAlloc | cuEventDestory
+
+CUDA HW    
+OS runtime libraies                                                      fopen fgets(23.141s)  fopen,fread,fcntl, ioctl
+NVTX                   Load Module(937.119ms)   | Set input data to module(575.223us)   |  Module running(23.198s)
+CUDA API  cuCtxCreate(292.342 ms+315.267 ms) cuMemAlloc cuEventDestory  |  cuModuleLoadDataEx       (cuStreamCreate cuEventCreate cuEventRecord cuEventDestory <kernel> cuStreamSynchronize)...  cuMemFree
+
+
+cuCtxCreate    (cuEventCreate cuMemcpyAsync cuEventRecord cuEventSynchronize cuEventDestory)...
+
+
+
+cuMOdulLoadDataEx(End time:26.1004 s  )  kernel end(26s 121.30 ms)  duration(21 ms)
+
+
+
+cudnn
+
+     cudaMalloc |  cudaMemGetInfo |  cudaMemcpy
+
+CUDA HW                                                                        kernel running (6.111 ms)
+NVTX          Load Module(3.360s) | Set input data to module(656.313 us) |    Module running(7.219ms)
+CUDA API  cudaStreamSynchronized       cudaMemcpy |cudaMemGetInfo         cuModuleLoadData  cudaMemGetInfo cudaMalloc cudaMemcpy cuFree  cuModuleUnload
+
+
