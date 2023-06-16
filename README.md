@@ -14,15 +14,19 @@ TVM中添加SYCL设备代码支持，相关tvm-sycl代码详见https://github.co
 
 以下的测试的tvm版本为v.0.10 Release，cuda版本为11.2，hip版本为5.2，hygon版本为5.2，SYCL版本为2022-09-release
 
-cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，oneapi-LevelZero平台下测试设备为Intel Arctic Sound-P 300W，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
+cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，oneapi-LevelZero平台下测试设备为Intel Arctic Sound-P-16G 300W，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
 
-Nvidia Tesla V100 测试统计结果 [详见](tvm-cuda-V100-sycl-test-result/cuda-V100-network-summary-new.xlsx)
+Nvidia Tesla V100 测试统计结果 [详见](tvm-nvidia-V100-sycl-test-result/cuda-V100-network-summary-new.xlsx)
 
-Nvidia Tesla V100 测试日志 [详见](tvm-cuda-V100-sycl-test-result/error_tvm_V100_nvidia_sycl_new.log)
+Nvidia Tesla V100 测试日志 [详见](tvm-nvidia-V100-sycl-test-result/error_tvm_V100_nvidia_sycl_new.log)
 
-AMD Radeon 测试统计结果 [详见](tvm-amd-MI50-sycl-test-result/rocm-MI50-network-summary-new.xlsx)
+AMD Radeon MI50 测试统计结果 [详见](tvm-amd-MI50-sycl-test-result/rocm-MI50-network-summary-new.xlsx)
 
-AMD Radeon 测试日志 [详见](tvm-amd-MI50-sycl-test-result/error_tvm_MI50_rocm_sycl.log)
+AMD Radeon MI50 测试日志 [详见](tvm-amd-MI50-sycl-test-result/error_tvm_MI50_rocm_sycl.log)
+
+Intel Arctic Sound-P 300W测试统计结果 [详见](tvm-intel-ASP300-sycl-test-result/sycl-ASP300-network-summary-new.xlsx)
+
+Intel Arctic Sound-P 300W测试日志 [详见](tvm-intel-ASP300-sycl-test-result/error_tvm_Intel_sycl.log)
 
 | network      | cuda-Nvidia | SYCL-Nvidia                                                  | OpenCL-Nvidia | rocm-AMD                                                     | SYCL-AMD                                          | OpenCL-AMD | rocm-Hygon | SYCL-Hygon         | OpenCL-Hygon | SYCL-Intel         | OpenCL-Intel |
 | ------------ | ----------- | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ | ------------------------------------------------- | ---------- | ---------- | ------------------ | ------------ | ------------------ | ------------ |
@@ -58,6 +62,12 @@ tvm-sycl开发测试过程中遇到的bug
 | **any**(some time)<br />resnet152-v1-7<br />resnet50-caffe2-v1-3 | cuda/hip/hygon | Check failed: (e.code() == sycl::errc::success) is false: SYCL Error, code=sycl:13: kERNEL NOT SUPPORTED | unfix                                                        |
 | **any**(all time)                                            | hygon          | [LOG_ERROR]: cannot find the function _ZTSZZ39tvmgen_default_ | unfix                                                        |
 | inception & googlenet                                        | hygon          | **nan**                                                      | unfix                                                        |
+
+SYCL平台性能
+
+sycl在Nvidia、AMD、Hygon、Intel硬件平台网络模型执行性能。
+
+![resnet50-sycl-platform](imgs/resnet50-sycl-platform.png)
 
 ### 自动优化
 
@@ -212,7 +222,7 @@ TVMError: LLVM module verification failed with the following errors:
             constant_memory_pools=constant_memory_pools,
             mod_name=mod_name,
         )
-12.tvm/python/tvm/relay/build_module.py class BuildModule self._build()
+12.tvm/python/tvm/relay/build_module.py class BuildModule def build(...) : self._build()
 11.tvm/python/tvm/_ffi/_ctypes/packed_func.py PackedFuncBase::__call__()
 10.src/relay/backend/build_module.cc {} tvm {} relay {} PackedFunc RelayBuildModule::GetFunction(const String& name, const ObjectPtr<Object>& sptr_to_self){}
 9.src/relay/backend/build_module.cc {} tvm {} relay {} void RelayBuildModule:: Build(IRModule mod, const Array<Target>& raw_targets, const tvm::Target& target_host,
