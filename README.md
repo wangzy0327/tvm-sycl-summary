@@ -14,7 +14,7 @@ TVM中添加SYCL设备代码支持，相关tvm-sycl代码详见https://github.co
 
 以下的测试的tvm版本为v.0.10 Release，cuda版本为11.2，hip版本为5.2，hygon版本为5.2，SYCL版本为2022-09-release
 
-cuda平台下测试设备为Tesla V100-32GB，hip平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，oneapi-LevelZero平台下测试设备为Intel Arctic Sound-P-16G 300W，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
+Nvidia硬件平台下测试设备为Tesla V100-32GB，AMD硬件平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，Intel平台下测试设备为Intel Arctic Sound-P-16G 300W，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
 
 Nvidia Tesla V100 测试统计结果 [详见](tvm-nvidia-V100-sycl-test-result/cuda-V100-network-summary-new.xlsx)
 
@@ -27,6 +27,10 @@ AMD Radeon MI50 测试日志 [详见](tvm-amd-MI50-sycl-test-result/error_tvm_MI
 Intel Arctic Sound-P 300W测试统计结果 [详见](tvm-intel-ASP300-sycl-test-result/sycl-ASP300-network-summary-new.xlsx)
 
 Intel Arctic Sound-P 300W测试日志 [详见](tvm-intel-ASP300-sycl-test-result/error_tvm_Intel_sycl.log)
+
+Hygon Z100 测试统计结果 [详见](tvm-hygon-Z100-sycl-test-result/Z100-rocm-summary.xlsx)
+
+Hygon Z100测试日志 [详见](tvm-hygon-Z100-sycl-test-result/error_tvm_Z100_hygon_sycl.log)
 
 | network      | cuda-Nvidia | SYCL-Nvidia                                                  | OpenCL-Nvidia | rocm-AMD                                                     | SYCL-AMD                                          | OpenCL-AMD | rocm-Hygon | SYCL-Hygon         | OpenCL-Hygon | SYCL-Intel         | OpenCL-Intel |
 | ------------ | ----------- | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ | ------------------------------------------------- | ---------- | ---------- | ------------------ | ------------ | ------------------ | ------------ |
