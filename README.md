@@ -12,7 +12,7 @@ TVM中添加SYCL设备代码支持，相关tvm-sycl代码详见https://github.co
 
 ### 支持网络模型
 
-以下的测试的tvm版本为v.0.10 Release，cuda版本为11.2，hip版本为5.2，hygon版本为5.2，SYCL版本为2022-09-release
+以下的测试的tvm版本为v.0.10 Release，cuda版本为11.2，hip版本为5.4.3，hygon版本为5.2，SYCL版本为2022-12-release
 
 Nvidia硬件平台下测试设备为Tesla V100-32GB，AMD硬件平台下测试设备为AMD Radeon (TM) Pro-16GB-gfx-906，Intel平台下测试设备为Intel Arctic Sound-P-16G 300W，hygon平台下测试设备为Hygon-Z100-33GB-gfx916 . 
 
@@ -268,5 +268,77 @@ i32 (float addrspace(1)*, float addrspace(1)*, float addrspace(1)*, float addrsp
 Function return type does not match operand type of return inst!
   ret void
  i32Calling convention requires void return type  
+```
+
+sycl的auto-scheduler代码修改：
+
+```
+1.python/tvm/auto_scheduler/utils.py  
+2.python/tvm/autotvm/tophub.py
+3.src/auto_scheduler/search_policy/utils.h
+4.src/auto_scheduler/search_task.cc
+```
+
+sycl的auto-scheduler代码的 traceback
+
+```
+Traceback (most recent call last):
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/_ffi/_ctypes/packed_func.py", line 81, in cfun
+    rv = local_pyfunc(*pyargs)
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/auto_scheduler/cost_model/cost_model.py", line 98, in predict_func
+    array_wrapper[:] = self.predict(task, states)
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/auto_scheduler/cost_model/xgb_model.py", line 232, in predict
+    features = get_per_store_features_from_states(states, task)
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/auto_scheduler/feature.py", line 236, in get_per_store_features_from_states
+    byte_arr = _ffi_api.GetPerStoreFeaturesFromStates(
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/_ffi/_ctypes/packed_func.py", line 227, in __call__
+    _LIB.TVMFuncCall(
+KeyboardInterrupt: 
+Traceback (most recent call last):
+  File "compile_optimizing_schedule.py", line 142, in <module>
+    tuner.tune(tune_option)
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/auto_scheduler/task_scheduler.py", line 357, in tune
+    self._tune_task(idx)
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/auto_scheduler/task_scheduler.py", line 452, in _tune_task
+    measure_inputs, measure_results = self.search_policies[task_idx].continue_search_one_round(
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/auto_scheduler/search_policy.py", line 119, in continue_search_one_round
+    return _ffi_api.SearchPolicyContinueSearchOneRound(self, num_measure, measurer)
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/python/tvm/_ffi/_ctypes/packed_func.py", line 237, in __call__
+    raise get_last_ffi_error()
+AttributeError: Traceback (most recent call last):
+  6: TVMFuncCall
+  5: tvm::runtime::PackedFuncObj::Extractor<tvm::runtime::PackedFuncSubObj<tvm::runtime::TypedPackedFunc<tvm::runtime::Array<tvm::runtime::ObjectRef, void> (tvm::auto_scheduler::SearchPolicy, int, tvm::auto_scheduler::ProgramMeasurer)>::AssignTypedLambda<tvm::auto_scheduler::$_1>(tvm::auto_scheduler::$_1, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)::{lambda(tvm::runtime::TVMArgs const&, tvm::runtime::TVMRetValue*)#1}> >::Call(tvm::runtime::PackedFuncObj const*, tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*)
+  4: tvm::auto_scheduler::SketchPolicyNode::ContinueSearchOneRound(int, tvm::auto_scheduler::ProgramMeasurer)
+  3: tvm::auto_scheduler::SketchPolicyNode::SearchOneRound(int, tvm::runtime::Array<tvm::auto_scheduler::State, void>*)
+  2: tvm::auto_scheduler::SketchPolicyNode::EvolutionarySearch(tvm::runtime::Array<tvm::auto_scheduler::State, void> const&, int)
+  1: tvm::auto_scheduler::PythonBasedModelNode::Predict(tvm::auto_scheduler::SearchTask const&, tvm::runtime::Array<tvm::auto_scheduler::State, void> const&, std::vector<float, std::allocator<float> >*)
+  0: tvm::runtime::PackedFuncObj::Extractor<tvm::runtime::PackedFuncSubObj<TVMFuncCreateFromCFunc::$_1> >::Call(tvm::runtime::PackedFuncObj const*, tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*)
+  2: TVMFuncCall
+  1: tvm::NodeGetAttr(tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*)
+  0: tvm::ReflectionVTable::GetAttr(tvm::runtime::Object*, tvm::runtime::String const&) const
+  File "/home/wangziyang/tvm-sycl/git-tvm-sycl/tvm/src/node/reflection.cc", line 109
+AttributeError: tir.IterVar object has no attributed __array__
+```
+
+bug-1
+
+```
+PI CUDA ERROR:
+        Value:           700
+        Name:            CUDA_ERROR_ILLEGAL_ADDRESS
+        Description:     an illegal memory access was encountered
+        Function:        operator()
+        Source Location: /home/wangziyang/sycl_workspace/intel-llvm-new/sycl/plugins/cuda/pi_cuda.cpp:2645
+```
+
+bug-2
+
+```
+PI CUDA ERROR:
+        Value:           701
+        Name:            CUDA_ERROR_LAUNCH_OUT_OF_RESOURCES
+        Description:     too many resources requested for launch
+        Function:        cuda_piEnqueueKernelLaunch
+        Source Location: /home/wangziyang/sycl_workspace/intel-llvm-new/sycl/plugins/cuda/pi_cuda.cpp:3179
 ```
 
