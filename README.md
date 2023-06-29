@@ -591,9 +591,172 @@ def tune(
             else:
                 raise ValueError("Invalid strategy: "+self.strategy)
             self._tune_task(task_idx)
-            self._adjust_similarity_group(task_idx)    
+            self._adjust_similarity_group(task_idx)
+            
 3. tvm/python/auto_scheduler/task_sheduler.py 
 def _tune_task(self, task_idx):
+    """Tune the select task for one round"""
+    # Run pre-tune callbacks
+    for callback in self.callbacks:
+        callback.pre_tune(self, task_idx)
+
+     measure_inputs, measure_results = 		   self.search_policies[task_idx].continue_search_one_round(
+            self.num_measures_per_round, self.measurer
+        )
+4.tvm/python/tvm/auto_scheduler/search_policy.py
+@tvm._ffi.register_object("auto_scheduler.SearchPolicy")
+class SearchPolicy(Object):
+    """The base class of search policies."""
+
+    def continue_search_one_round(self, num_measure, measurer):
+        """
+        Continue the search by doing an additional search round.
+        """
+        return _ffi_api.SearchPolicyContinueSearchOneRound(self, num_measure, measurer)
+```
+
+cpp
+
+```cpp
+5.include/tvm/auto_scheduler/search_policy.cc
+TVM_REGISTER_GLOBAL("auto_scheduler.SearchPolicyContinueSearchOneRound")
+    .set_body_typed([](SearchPolicy policy, int num_measure, ProgramMeasurer measurer) {
+      auto [inputs, results] = policy->ContinueSearchOneRound(num_measure, measurer);
+      return Array<ObjectRef>{inputs, results};
+    });
+
+6.src/auto_scheduler/search_policy/empty_policy.cc
+std::pair<Array<MeasureInput>, Array<MeasureResult>> EmptyPolicyNode::ContinueSearchOneRound() {
+    // Search one round to get promising states
+  PrintTitle("Search", verbose);
+  best_states = SearchOneRound();
+
+  // Measure these states
+  PrintTitle("Measure", verbose);
+  for (const auto& state : best_states) {
+    inputs.push_back(MeasureInput(search_task, state));
+  }
+  results = measurer->Measure(search_task, GetRef<SearchPolicy>(this), inputs);
+}   
+
+7.src/auto_sheduler/measure.cc
+Array<MeasureResult> ProgramMeasurerNode::Measure(const SearchTask& task,
+                                                  const SearchPolicy& policy,
+                                                  const Array<MeasureInput>& inputs,
+                                                  int batch_size) {
+    ...
+    // build and run
+    SilentMeasure(task, input_batch, &result_batch);
+    ...
+}
+
+8.src/auto_scheduler/measure.cc
+void ProgramMeasurerNode::SilentMeasure(const SearchTask& task, const Array<MeasureInput>& inputs,
+                                        Array<MeasureResult>* results) {
+  // Call builder and runner
+  Array<BuildResult> build_res_batch = builder->Build(inputs, verbose);
+  Array<MeasureResult> result_batch = runner->Run(inputs, build_res_batch, verbose);
+}    
+
+9.src/auto_scheduler/measure.cc
+Array<BuildResult> LocalBuilderNode::Build(const Array<MeasureInput>& inputs, int verbose) {
+    if (const auto* f = runtime::Registry::Get("auto_scheduler.local_builder.build")) {
+    Array<BuildResult> results = (*f)(inputs, timeout, n_parallel, build_func, verbose);
+    return results;
+  }
+}  
+
+12.src/auto_scheduler/measure.cc
+Array<MeasureResult> LocalRunnerNode::Run(const Array<MeasureInput>& inputs,
+                                          const Array<BuildResult>& build_results, int verbose) {
+      if (const auto* f = runtime::Registry::Get("auto_scheduler.local_runner.run")) {
+    Array<MeasureResult> results =
+        (*f)(inputs, build_results, timeout, number, repeat, min_repeat_ms, cooldown_interval,
+             enable_cpu_cache_flush, verbose, device);
+    return results;
+  }
+}    
     
+
+```
+
+python
+
+```python
+10.python/tvm/auto_scheduler/measuer.py
+
+@tvm._ffi.register_func("auto_scheduler.local_builder.build")
+def local_builder_build(inputs, timeout, n_parallel, build_func="default", verbose=1):
+    """
+    Build function of LocalBuilder to build the MeasureInputs to runnable modules.
+    """
+    ...
+        executor = PopenPoolExecutor(
+        n_parallel, timeout, reset_global_scope, (AutotvmGlobalScope.current,)
+    )
+    ...
+
+11.python/tvm/contrib/popen_pool.py
+class PopenPoolExecutor:
+    """An parallel executor backed by Popen processes.
+    """
+    if max_workers is None:
+       max_workers = os.cpu_count()
+    # Use an internal thread pool to send to popen workers
+    self._threadpool = concurrent.futures.ThreadPoolExecutor(max_workers=max_workers)
+    
+
+13.python/tvm/auto_scheduler/measure.py
+@tvm._ffi.register_func("auto_scheduler.local_runner.run")
+def local_run(
+    inputs,
+    build_results,
+    timeout=10,
+    number=3,
+    repeat=1,
+    min_repeat_ms=0,
+    cooldown_interval=0,
+    enable_cpu_cache_flush=False,
+    verbose=1,
+    device=0,
+):
+        """
+    Run function of LocalRunner to test the performance of the input BuildResults."""
+	worker = PopenWorker()
+    for inp, build_res in zip(inputs, build_results):  
+        if build_res.error_no != 0:
+            ...
+        else:
+            args = prepare_runner_args(inp, build_res)
+            res = call_func_with_timeout(
+                worker,
+                timeout,
+                _timed_eval_func,
+                args=(
+                    inp.serialize(),
+                    build_res,
+                    args,
+                    number,
+                    repeat,
+                    min_repeat_ms,
+                    cooldown_interval,
+                    enable_cpu_cache_flush,
+                    verbose,
+                    device,
+                ),
+            ) 
+            
+14.python/tvm/auto_scheduler/utils.py
+def call_func_with_timeout(
+    worker, timeout, func, args=(), kwargs=None
+):  # pylint: disable=unused-argument
+    """Call a function with timeout"""
+    worker.send(func, args, kwargs, timeout)
+    try:
+        res = worker.recv()
+    except Exception:  # pylint: disable=broad-except
+        res = Exception(make_traceback_info())
+
+    return res
 ```
 
