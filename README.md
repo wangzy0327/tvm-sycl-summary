@@ -1,3 +1,5 @@
+
+
 # tvm-sycl测试验证
 
 ### 概述
@@ -270,7 +272,84 @@ Function return type does not match operand type of return inst!
  i32Calling convention requires void return type  
 ```
 
-sycl的auto-scheduler代码修改：
+
+
+### auto-scheduler过程
+
+##### 定义矩阵乘法
+
+```python
+@auto_scheduler.register_workload  # Note the auto_scheduler decorator
+def matmul_add(N, L, M, dtype):
+    A = te.placeholder((N, L), name="A", dtype=dtype)
+    B = te.placeholder((L, M), name="B", dtype=dtype)
+    C = te.placeholder((N, M), name="C", dtype=dtype)
+	return [A, B, C, out]
+```
+
+##### 创建搜索任务
+
+```python
+target = tvm.target.Target("llvm")
+N = L = M = 1024
+task = tvm.auto_scheduler.SearchTask(func=matmul_add, args=(N, L, M, "float32"), target=target)
+
+# 检查计算图
+print("Computational DAG:")
+print(task.compute_dag)
+```
+
+##### 设置auto-sheduler参数
+
+```python
+log_file = "matmul.json"
+tune_option = auto_scheduler.TuningOptions(
+    num_measure_trials=10,
+    measure_callbacks=[auto_scheduler.RecordToFile(log_file)],
+    verbose=2,
+)
+```
+
+##### 开始搜索
+
+```python
+# 运行 auto-tuning（搜索）
+task.tune(tune_option)
+# 应用最佳 schedule
+sch, args = task.apply_best(log_file)
+```
+
+##### 检查优化的schedule
+
+```python
+print("Lowered TIR:")
+print(tvm.lower(sch, args, simple_mode=True))
+```
+
+##### 检查正确性并评估性能
+
+```python
+# Check results
+np.testing.assert_allclose(out_np, out_tvm.numpy(), rtol=1e-3)
+
+# Evaluate execution time.
+evaluator = func.time_evaluator(func.entry_name, dev, min_repeat_ms=500)
+print(
+    "Execution time of this operator: %.3f ms"
+    % (np.median(evaluator(a_tvm, b_tvm, c_tvm, out_tvm).results) * 1000)
+)
+```
+
+##### 使用记录文件
+
+```python
+print("Equivalent python schedule:")
+print(task.print_best(log_file))
+```
+
+
+
+### sycl的auto-scheduler代码修改：
 
 ```
 1.python/tvm/auto_scheduler/utils.py  
@@ -320,9 +399,15 @@ AttributeError: Traceback (most recent call last):
 AttributeError: tir.IterVar object has no attributed __array__
 ```
 
-bug-1
+bug-1  
 
 ```
+1.sycl/plugins/cuda/pi_cuda.cpp  pi_result cuda_piQueueFinish(pi_queue command_queue)
+2.sycl/plugins/cuda/pi_cuda.cpp  _PI_CL(piQueueFinish, cuda_piQueueFinish)
+3.sycl/source/detail/queue_impl.cpp void queue_impl::wait(const detail::code_location &CodeLoc)
+4.sycl/include/sycl/queue.hpp  wait(){wait_proxy();}
+5.sycl/source/sycl/queue.cpp wait_proxy{impl->wait();}
+
 PI CUDA ERROR:
         Value:           700
         Name:            CUDA_ERROR_ILLEGAL_ADDRESS
@@ -334,11 +419,181 @@ PI CUDA ERROR:
 bug-2
 
 ```
+1.sycl/plugins/cuda/pi_cuda.cpp  pi_result cuda_piEnqueueKernelLaunch(
+    pi_queue command_queue, pi_kernel kernel, pi_uint32 work_dim,
+    const size_t *global_work_offset, const size_t *global_work_size,
+    const size_t *local_work_size, pi_uint32 num_events_in_wait_list,
+    const pi_event *event_wait_list, pi_event *event) 
+    
+2.sycl/plugins/cuda/pi_cuda.cpp   _PI_CL(piEnqueueKernelLaunch, cuda_piEnqueueKernelLaunch)
+
+3.sycl/include/sycl/handler.hpp  event finalize();
+4.sycl/source/handler.cpp  event handler::finalize();
+
 PI CUDA ERROR:
         Value:           701
         Name:            CUDA_ERROR_LAUNCH_OUT_OF_RESOURCES
         Description:     too many resources requested for launch
         Function:        cuda_piEnqueueKernelLaunch
         Source Location: /home/wangziyang/sycl_workspace/intel-llvm-new/sycl/plugins/cuda/pi_cuda.cpp:3179
+```
+
+bug-3
+
+```cpp
+PI CUDA ERROR:
+        Value:           1
+        Name:            CUDA_ERROR_INVALID_VALUE
+        Description:     invalid argument
+        Function:        cuda_piEnqueueKernelLaunch
+        Source Location: /home/wangziyang/sycl_workspace/intel-llvm-new/sycl/plugins/cuda/pi_cuda.cpp:3179
+```
+
+bug-4
+
+```cpp
+In file included from /tmp/tvm_sycl/sycl_4083715_1.cc:2:
+In file included from /home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../include/sycl/CL/sycl.hpp:11:
+In file included from /home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../include/sycl/sycl.hpp:11:
+In file included from /home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../include/sycl/accessor.hpp:28:
+In file included from /home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../include/sycl/image.hpp:18:
+/home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../include/sycl/types.hpp:870:18: error: no matching function for call to 'convertImpl'
+                 detail::convertImpl<vec_data_t<DataT>, vec_data_t<convertT>,
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/tvm_sycl/sycl_4083715_1.cc:40:630: note: in instantiation of function template specialization 'sycl::vec<int, 4>::convert<bool, sycl::rounding_mode::automatic>' requested here
+  ...2, 2, 2})) - (vec<int, 4>{1, 1, 1, 1})), (((int4){(0)+(1*0), (0)+(1*1), (0)+(1*2), (0)+(1*3)}) / (vec<int, 4>{2, 2, 2, 2})), (((((((vec<int, 4>{2, 2, 2, 2}) >= (vec<int, 4>{0, 0, 0, 0})).convert<bool>()) && (((((int4){(0)+(1*...
+```
+
+##### traceback auto-scheduler
+
+python
+
+```python
+1.auto_scheduler.extract_tasks(mod["main"], target=target, params=params)
+2.tvm/python/auto_scheduler/relay_integration.py
+def extract_tasks(mod,params,target,...):
+    ...
+    tasks.append(SearchTask(...))
+    weights.append(int(weight))
+    ...
+    return tasks,weights
+3.tvm/python/tvm/auto_scheduler/search_task.py 
+@tvm._ffi.register_object("auto_scheduler.SearchTask")
+class SearchTask(Object):
+    ...
+    self.__init_handle_by_constructor__(
+            _ffi_api.SearchTask,
+            compute_dag,
+            workload_key,
+            target,
+            target_host,
+            hardware_params,
+            layout_rewrite_option,
+            task_input_names,
+            desc,
+        )
+
+```
+
+cpp
+
+```cpp
+4.tvm/incldue/tvm/auto_scheduler/search_task.h 
+class SearchTaskNode : public Object {
+  ...
+  static constexpr const char* _type_key = "auto_scheduler.SearchTask";
+  TVM_DECLARE_FINAL_OBJECT_INFO(SearchTaskNode, Object);
+}
+
+5.tvm/src/auto_sheduler/search_task.cc
+TVM_REGISTER_GLOBAL("auto_scheduler.SearchTask")
+    .set_body_typed([](ComputeDAG compute_dag, String workload_key, Target target,
+                       Target target_host, Optional<HardwareParams> hardware_params,
+                       int layout_rewrite_option, Array<String> task_input_names, String desc) {
+      CheckAndUpdateHostConsistency(&target, &target_host);
+      return SearchTask(compute_dag, workload_key, target, target_host, hardware_params,
+                        LayoutRewriteOption(layout_rewrite_option), task_input_names, desc);
+    });    
+
+6.tvm/src/auto_sheduler/search_task.cc
+SearchTask::SearchTask(ComputeDAG compute_dag, String workload_key, Target target,
+                       Target target_host, Optional<HardwareParams> hardware_params,
+                       LayoutRewriteOption layout_rewrite_option, Array<String> task_input_names,
+                       String desc) {
+    ...
+    auto node = make_object<SearchTaskNode>();
+    ...
+        if (hardware_params) {
+            node->hardware_params = hardware_params.value();
+        } else {
+            node->hardware_params =
+                HardwareParamsNode::GetDefaultHardwareParams(node->target, node->target_host);
+        }  
+    ...        
+}    
+7.tvm/src/auto_sheduler/search_task.cc
+HardwareParams HardwareParamsNode::GetDefaultHardwareParams(const Target& target,
+                                                            const Target& target_host){
+    ...
+    return HardWareParams;
+}        
+```
+
+python
+
+```python
+1.tuner = auto_scheduler.TaskScheduler(tasks, task_weights)
+2.tvm/python/auto_scheduler/task_sheduler.py 
+class TaskScheduler:
+    """
+    Allocate the time resources when tuning multiple tasks together.
+    This implements two strategies: "round-robin" and "gradient".  
+    """
+    # Build similarity groups
+    self.task_tags = []  # task_id -> tag
+    self.tag_to_group_id = {}  # tag -> group_id
+    self.group_task_ids = []  # group_id -> all task ids in this group
+    self.flop_cts = []  # task_id -> the number of floating ops
+    for i, task in enumerate(self.tasks):
+        tag = derive_similarity_tag(task.compute_dag)
+        self.task_tags.append(tag)
+        self.flop_cts.append(task.compute_dag.flop_ct)
+        if not tag:
+            continue
+
+        if tag not in self.tag_to_group_id:
+           self.tag_to_group_id[tag] = len(self.tag_to_group_id)
+           self.group_task_ids.append([])
+        self.group_task_ids[self.tag_to_group_id[tag]].append(i)
+```
+
+python
+
+```python
+1.tuner.tune(tune_option)
+2.tvm/python/auto_scheduler/task_sheduler.py 
+def tune(
+        self,
+        tune_option,
+        search_policy="default",
+        search_policy_params=None,
+        adaptive_training=False,
+        per_task_early_stopping=None,
+    ):
+    """Tune a batch of tasks together."""
+        # use the specific strategy to choose workload to tune
+        task_idx = -1
+        while self.ct < tune_option.num_measure_trials and len(self.dead_tasks) < len(self.tasks):    
+            if self.strategy == "round-robin":
+                ...
+            elif self.strategy == "gradient":
+                ...
+            else:
+                raise ValueError("Invalid strategy: "+self.strategy)
+            self._tune_task(task_idx)
+            self._adjust_similarity_group(task_idx)    
+3. tvm/python/auto_scheduler/task_sheduler.py 
+def _tune_task(self, task_idx):
+    
 ```
 
