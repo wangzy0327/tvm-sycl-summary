@@ -69,6 +69,8 @@ tvm-sycl开发测试过程中遇到的bug
 | **any**(all time)                                            | hygon          | [LOG_ERROR]: cannot find the function _ZTSZZ39tvmgen_default_ | unfix                                                        |
 | inception & googlenet                                        | hygon          | **nan**                                                      | unfix                                                        |
 
+有关SYCL代码生成的代码分析 [traceback](source_parse.md)
+
 SYCL平台性能
 
 sycl在Nvidia、AMD、Hygon、Intel硬件平台网络模型执行性能。
@@ -462,6 +464,18 @@ In file included from /home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../
                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /tmp/tvm_sycl/sycl_4083715_1.cc:40:630: note: in instantiation of function template specialization 'sycl::vec<int, 4>::convert<bool, sycl::rounding_mode::automatic>' requested here
   ...2, 2, 2})) - (vec<int, 4>{1, 1, 1, 1})), (((int4){(0)+(1*0), (0)+(1*1), (0)+(1*2), (0)+(1*3)}) / (vec<int, 4>{2, 2, 2, 2})), (((((((vec<int, 4>{2, 2, 2, 2}) >= (vec<int, 4>{0, 0, 0, 0})).convert<bool>()) && (((((int4){(0)+(1*...
+
+/home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../include/sycl/types.hpp:266:48: note: candidate template ignored: requirement 'std::is_same<int, bool>::value' was not satisfied [with T =
+      vec_data_t<DataT>, R = vec_data_t<bool>, roundingMode = sycl::rounding_mode::automatic, OpenCLT = OpenCLT, OpenCLR = OpenCLR]
+std::enable_if_t<std::is_same<T, R>::value, R> convertImpl(T Value) {
+                                               ^
+/home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../include/sycl/types.hpp:337:1: note: candidate template ignored: requirement 'std::is_same<int, unsigned char>::value' was not satisfied [with T =
+      vec_data_t<DataT>, R = vec_data_t<bool>, roundingMode = sycl::rounding_mode::automatic, OpenCLT = OpenCLT, OpenCLR = OpenCLR]
+convertImpl(T Value) {
+^
+/home/wangziyang/sycl_workspace/build-cuda-2022-12/bin/../include/sycl/types.hpp:356:1: note: candidate template ignored: requirement 'integral_constant<bool, false>::value' was not satisfied [with T =
+      vec_data_t<DataT>, R = vec_data_t<bool>, roundingMode = sycl::rounding_mode::automatic, OpenCLT = OpenCLT, OpenCLR = OpenCLR]
+
 ```
 
 ##### traceback auto-scheduler
@@ -758,5 +772,40 @@ def call_func_with_timeout(
         res = Exception(make_traceback_info())
 
     return res
+```
+
+/tmp/tmp_sycl/sycl_84975_1.cc
+
+```cpp
+1.(vec<int, 4>{0, 0, 0, 0})).convert<bool>())
+2.include/sycl/types.hpp
+  // Constructor from values of base type or vec of base type. Checks that
+  // base types are match and that the NumElements == sum of lengths of args.
+  template <typename... argTN, typename = EnableIfSuitableTypes<argTN...>,
+            typename = EnableIfSuitableNumElements<argTN...>>
+  constexpr vec(const argTN &...args) {
+    vaargCtorHelper(0, args...);
+  }
+
+3.include/sycl/types.hpp
+
+template <typename convertT,
+            rounding_mode roundingMode = rounding_mode::automatic>
+  vec<convertT, NumElements> convert() const {
+    static_assert(std::is_integral<vec_data_t<convertT>>::value ||
+                      detail::is_floating_point<convertT>::value,
+                  "Unsupported convertT");
+    vec<convertT, NumElements> Result;
+    using OpenCLT = detail::ConvertToOpenCLType_t<vec_data_t<DataT>>;
+    using OpenCLR = detail::ConvertToOpenCLType_t<vec_data_t<convertT>>;
+    for (size_t I = 0; I < NumElements; ++I) {
+      Result.setValue(
+          I, vec_data<convertT>::get(
+                 detail::convertImpl<vec_data_t<DataT>, vec_data_t<convertT>,
+                                     roundingMode, OpenCLT, OpenCLR>(
+                     vec_data<DataT>::get(getValue(I)))));
+    }
+    return Result;
+  }    
 ```
 
