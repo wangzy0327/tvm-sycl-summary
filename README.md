@@ -71,6 +71,8 @@ tvm-sycl开发测试过程中遇到的bug
 
 有关SYCL代码生成的代码分析 [traceback](source_parse.md)
 
+有关CodeGen代码生成的代码分析 [traceback](codegenC.md)
+
 SYCL平台性能
 
 sycl在Nvidia、AMD、Hygon、Intel硬件平台网络模型执行性能。
@@ -85,12 +87,15 @@ cuda平台下测试设备为Tesla V100-32GB
 
 目前测试遇到的问题
 
-| network  | platform  | bug                                                          | progress                                    |
-| -------- | --------- | ------------------------------------------------------------ | ------------------------------------------- |
-| any      | rocm      | ROCM HIP：invalid device ordinal                             | <font color=green>fix(ROCMDeviceAPI)</font> |
-| mnist-1  | sycl/cuda | compute number accuracy                                      | undo(2022-12-release)                       |
-| any      | sycl/cuda | PI CUDA ERROR 700 an illegal memory access was encountered(sycl/plugins/cuda/pi_cuda.cpp) | undo                                        |
-| google-3 | sycl/hip  | Memory access fault by GPU node-2 (Agent handle: 0x56534ffb3250) on address 0x7facb0600000. Reason: Page not present or supervisor privilege. | undo                                        |
+| network  | platform  | bug                                                          | progress                                             |
+| -------- | --------- | ------------------------------------------------------------ | ---------------------------------------------------- |
+| any      | rocm      | ROCM HIP：invalid device ordinal                             | <font color=green>fix(ROCMDeviceAPI)</font>          |
+| any      | sycl/rocm | ROCM HIP: terminate called after throwing an instance of 'sycl::_V1::runtime_error' what():  Native API failed. Native API returns: -30 (PI_ERROR_INVALID_VALUE) | <font color=green>fix(plugins/hip/pi_hip.cpp)</font> |
+| mnist-1  | sycl/cuda | compute number accuracy                                      | undo(2022-12-release)                                |
+| any      | sycl/cuda | PI CUDA ERROR 700 an illegal memory access was encountered(sycl/plugins/cuda/pi_cuda.cpp) | undo                                                 |
+| any      | sycl/cuda | PI CUDA ERROR 1 CUDA_ERROR_INVALID_VALUE invalid argument    | undo                                                 |
+| any      | sycl/cuda | PI CUDA ERROR 701 CUDA_ERROR_LAUNCH_OUT_OF_RESOURCES<br /> too many resources requested for launch | undo                                                 |
+| google-3 | sycl/hip  | Memory access fault by GPU node-2 (Agent handle: 0x56534ffb3250) on address 0x7facb0600000. Reason: Page not present or supervisor privilege. | undo                                                 |
 
 ##### bug-1
 
@@ -403,12 +408,23 @@ AttributeError: tir.IterVar object has no attributed __array__
 
 bug-1  
 
-```
-1.sycl/plugins/cuda/pi_cuda.cpp  pi_result cuda_piQueueFinish(pi_queue command_queue)
-2.sycl/plugins/cuda/pi_cuda.cpp  _PI_CL(piQueueFinish, cuda_piQueueFinish)
-3.sycl/source/detail/queue_impl.cpp void queue_impl::wait(const detail::code_location &CodeLoc)
-4.sycl/include/sycl/queue.hpp  wait(){wait_proxy();}
-5.sycl/source/sycl/queue.cpp wait_proxy{impl->wait();}
+```cpp
+1.sycl/plugins/cuda/pi_cuda.cpp
+    command_queue->sync_streams</*ResetUsed=*/true>([&result](CUstream s) {
+      result = PI_CHECK_ERROR(cuStreamSynchronize(s));
+    });
+2.sycl/plugins/cuda/pi_cuda.cpp
+    pi_result cuda_piQueueFinish(pi_queue command_queue)}
+
+3.sycl/plugins/cuda/pi_cuda.cpp
+    // Queue
+    _PI_CL(piQueueFinish, cuda_piQueueFinish)
+3.sycl/source/detail/queue_impl.cpp
+    void queue_impl::wait(const detail::code_location &CodeLoc){}
+4.sycl/include/sycl/queue.hpp
+    wait(){wait_proxy();}
+5.sycl/source/sycl/queue.cpp
+    wait_proxy{impl->wait();}
 
 PI CUDA ERROR:
         Value:           700
@@ -420,17 +436,75 @@ PI CUDA ERROR:
 
 bug-2
 
-```
-1.sycl/plugins/cuda/pi_cuda.cpp  pi_result cuda_piEnqueueKernelLaunch(
-    pi_queue command_queue, pi_kernel kernel, pi_uint32 work_dim,
-    const size_t *global_work_offset, const size_t *global_work_size,
-    const size_t *local_work_size, pi_uint32 num_events_in_wait_list,
-    const pi_event *event_wait_list, pi_event *event) 
-    
-2.sycl/plugins/cuda/pi_cuda.cpp   _PI_CL(piEnqueueKernelLaunch, cuda_piEnqueueKernelLaunch)
+```cpp
+1.sycl/plugins/cuda/pi_cuda.cpp  
+    retError = PI_CHECK_ERROR(cuLaunchKernel(
+        cuFunc, blocksPerGrid[0], blocksPerGrid[1], blocksPerGrid[2],
+        threadsPerBlock[0], threadsPerBlock[1], threadsPerBlock[2], local_size,
+        cuStream, const_cast<void **>(argIndices.data()), nullptr));
 
-3.sycl/include/sycl/handler.hpp  event finalize();
-4.sycl/source/handler.cpp  event handler::finalize();
+2.sycl/plugins/cuda/pi_cuda.cpp
+    pi_result cuda_piEnqueueKernelLaunch(
+        pi_queue command_queue, pi_kernel kernel, pi_uint32 work_dim,
+        const size_t *global_work_offset, const size_t *global_work_size,
+        const size_t *local_work_size, pi_uint32 num_events_in_wait_list,
+        const pi_event *event_wait_list, pi_event *event)
+    
+3.sycl/plugins/cuda/pi_cuda.cpp
+    // Queue commands
+    _PI_CL(piEnqueueKernelLaunch, cuda_piEnqueueKernelLaunch)
+    
+4.sycl/source/detail/scheduler/commands.cpp
+    static pi_result SetKernelParamsAndLaunch(
+        const QueueImplPtr &Queue, std::vector<ArgDesc> &Args,
+        const std::shared_ptr<device_image_impl> &DeviceImageImpl,
+        RT::PiKernel Kernel, NDRDescT &NDRDesc, std::vector<RT::PiEvent> &RawEvents,
+        RT::PiEvent *OutEvent,
+        const ProgramManager::KernelArgMask &EliminatedArgMask,
+        const std::function<void *(Requirement *Req)> &getMemAllocationFunc) {
+        ...
+        pi_result Error = Plugin.call_nocheck<PiApiKind::piEnqueueKernelLaunch>(
+          Queue->getHandleRef(), Kernel, NDRDesc.Dims, &NDRDesc.GlobalOffset[0],
+          &NDRDesc.GlobalSize[0], LocalSize, RawEvents.size(),
+          RawEvents.empty() ? nullptr : &RawEvents[0], OutEvent);
+        return Error;        
+}
+
+5.sycl/source/detail/scheduler/commands.cpp
+pi_int32 enqueueImpKernel(
+    const QueueImplPtr &Queue, NDRDescT &NDRDesc, std::vector<ArgDesc> &Args,
+    const std::shared_ptr<detail::kernel_bundle_impl> &KernelBundleImplPtr,
+    const std::shared_ptr<detail::kernel_impl> &MSyclKernel,
+    const std::string &KernelName, const detail::OSModuleHandle &OSModuleHandle,
+    std::vector<RT::PiEvent> &RawEvents, RT::PiEvent *OutEvent,
+    const std::function<void *(Requirement *Req)> &getMemAllocationFunc){
+    ...
+        Error = SetKernelParamsAndLaunch(Queue, Args, DeviceImageImpl, Kernel,
+                                         NDRDesc, RawEvents, OutEvent,
+                                         EliminatedArgMask, getMemAllocationFunc);
+}  
+
+6.sycl/source/hander.cpp
+event handler::finalize() {
+    ...
+    if (MQueue->getPlugin().getBackend() ==
+              backend::ext_intel_esimd_emulator) {
+     MQueue->getPlugin().call<detail::PiApiKind::piEnqueueKernelLaunch>(...);
+    }else{
+     Result = enqueueImpKernel(
+         MQueue, MNDRDesc, MArgs, KernelBundleImpPtr, MKernel,
+         MKernelName, MOSModuleHandle, RawEvents, OutEvent, nullptr);
+    }        
+}
+
+7.sycl/include/sycl/handler.hpp
+    /// Constructs CG object of specific type, passes it to Scheduler and
+    /// returns sycl::event object representing the command group.
+    /// It's expected that the method is the latest method executed before
+    /// object destruction.
+    ///
+    /// \return a SYCL event object representing the command group
+    event finalize();
 
 PI CUDA ERROR:
         Value:           701
@@ -443,6 +517,77 @@ PI CUDA ERROR:
 bug-3
 
 ```cpp
+1.sycl/plugins/cuda/pi_cuda.cpp  
+    retError = PI_CHECK_ERROR(cuLaunchKernel(
+        cuFunc, blocksPerGrid[0], blocksPerGrid[1], blocksPerGrid[2],
+        threadsPerBlock[0], threadsPerBlock[1], threadsPerBlock[2], local_size,
+        cuStream, const_cast<void **>(argIndices.data()), nullptr));
+
+2.sycl/plugins/cuda/pi_cuda.cpp
+    pi_result cuda_piEnqueueKernelLaunch(
+        pi_queue command_queue, pi_kernel kernel, pi_uint32 work_dim,
+        const size_t *global_work_offset, const size_t *global_work_size,
+        const size_t *local_work_size, pi_uint32 num_events_in_wait_list,
+        const pi_event *event_wait_list, pi_event *event)
+    
+3.sycl/plugins/cuda/pi_cuda.cpp
+    // Queue commands
+    _PI_CL(piEnqueueKernelLaunch, cuda_piEnqueueKernelLaunch)
+    
+4.sycl/source/detail/scheduler/commands.cpp
+    static pi_result SetKernelParamsAndLaunch(
+        const QueueImplPtr &Queue, std::vector<ArgDesc> &Args,
+        const std::shared_ptr<device_image_impl> &DeviceImageImpl,
+        RT::PiKernel Kernel, NDRDescT &NDRDesc, std::vector<RT::PiEvent> &RawEvents,
+        RT::PiEvent *OutEvent,
+        const ProgramManager::KernelArgMask &EliminatedArgMask,
+        const std::function<void *(Requirement *Req)> &getMemAllocationFunc) {
+        ...
+        pi_result Error = Plugin.call_nocheck<PiApiKind::piEnqueueKernelLaunch>(
+          Queue->getHandleRef(), Kernel, NDRDesc.Dims, &NDRDesc.GlobalOffset[0],
+          &NDRDesc.GlobalSize[0], LocalSize, RawEvents.size(),
+          RawEvents.empty() ? nullptr : &RawEvents[0], OutEvent);
+        return Error;        
+}
+
+5.sycl/source/detail/scheduler/commands.cpp
+pi_int32 enqueueImpKernel(
+    const QueueImplPtr &Queue, NDRDescT &NDRDesc, std::vector<ArgDesc> &Args,
+    const std::shared_ptr<detail::kernel_bundle_impl> &KernelBundleImplPtr,
+    const std::shared_ptr<detail::kernel_impl> &MSyclKernel,
+    const std::string &KernelName, const detail::OSModuleHandle &OSModuleHandle,
+    std::vector<RT::PiEvent> &RawEvents, RT::PiEvent *OutEvent,
+    const std::function<void *(Requirement *Req)> &getMemAllocationFunc){
+    ...
+        Error = SetKernelParamsAndLaunch(Queue, Args, DeviceImageImpl, Kernel,
+                                         NDRDesc, RawEvents, OutEvent,
+                                         EliminatedArgMask, getMemAllocationFunc);
+}  
+
+6.sycl/source/hander.cpp
+event handler::finalize() {
+    ...
+    if (MQueue->getPlugin().getBackend() ==
+              backend::ext_intel_esimd_emulator) {
+     MQueue->getPlugin().call<detail::PiApiKind::piEnqueueKernelLaunch>(...);
+    }else{
+     Result = enqueueImpKernel(
+         MQueue, MNDRDesc, MArgs, KernelBundleImpPtr, MKernel,
+         MKernelName, MOSModuleHandle, RawEvents, OutEvent, nullptr);
+    }        
+}
+
+7.sycl/include/sycl/handler.hpp
+    /// Constructs CG object of specific type, passes it to Scheduler and
+    /// returns sycl::event object representing the command group.
+    /// It's expected that the method is the latest method executed before
+    /// object destruction.
+    ///
+    /// \return a SYCL event object representing the command group
+    event finalize();    
+    
+
+    
 PI CUDA ERROR:
         Value:           1
         Name:            CUDA_ERROR_INVALID_VALUE
@@ -450,6 +595,8 @@ PI CUDA ERROR:
         Function:        cuda_piEnqueueKernelLaunch
         Source Location: /home/wangziyang/sycl_workspace/intel-llvm-new/sycl/plugins/cuda/pi_cuda.cpp:3179
 ```
+
+
 
 bug-4
 
