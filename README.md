@@ -77,7 +77,7 @@ SYCL平台性能
 
 sycl在Nvidia、AMD、Hygon、Intel硬件平台网络模型执行性能。
 
-![resnet50-sycl-platform](imgs/resnet50-sycl-platform.png)
+![resnet50-sycl-platform](imgs/resnet50-2-sycl-platform.png)
 
 ### 自动优化
 
@@ -91,6 +91,7 @@ cuda平台下测试设备为Tesla V100-32GB
 | -------- | --------- | ------------------------------------------------------------ | ---------------------------------------------------- |
 | any      | rocm      | ROCM HIP：invalid device ordinal                             | <font color=green>fix(ROCMDeviceAPI)</font>          |
 | any      | sycl/rocm | ROCM HIP: terminate called after throwing an instance of 'sycl::_V1::runtime_error' what():  Native API failed. Native API returns: -30 (PI_ERROR_INVALID_VALUE) | <font color=green>fix(plugins/hip/pi_hip.cpp)</font> |
+| any      | sycl      | VLOG logging could not print                                 | <font color=green>fix(tvm/CmakeLists.txt)</font>     |
 | mnist-1  | sycl/cuda | compute number accuracy                                      | undo(2022-12-release)                                |
 | any      | sycl/cuda | PI CUDA ERROR 700 an illegal memory access was encountered(sycl/plugins/cuda/pi_cuda.cpp) | undo                                                 |
 | any      | sycl/cuda | PI CUDA ERROR 1 CUDA_ERROR_INVALID_VALUE invalid argument    | undo                                                 |
